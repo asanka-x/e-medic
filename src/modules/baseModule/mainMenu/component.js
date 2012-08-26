@@ -4,7 +4,7 @@ define(['Boiler', 'text!./view.html', 'i18n!./nls/resources', 'text!./style.css'
 		var panel = null;
 		return {
 			activate : function(parent) {
-				panel = new Boiler.ViewTemplate(parent, template, nls, style);
+				panel = new Boiler.ViewTemplate(parent, template, nls,null);
 			},
 
 			deactivate : function() {
