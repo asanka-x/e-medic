@@ -5,6 +5,7 @@ define(['Boiler', 'text!./view.html', 'i18n!./nls/resources', 'text!./style.css'
 		return {
 			activate : function(parent) {
 				panel = new Boiler.ViewTemplate(parent, template, nls,null);
+				$("#myList").listview();
 			},
 
 			deactivate : function() {
