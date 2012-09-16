@@ -1,4 +1,4 @@
-<div class='liveExample'> 
+<div class='dataList1'> 
     
 <form data-bind="submit: addItem">
     New item:
@@ -6,8 +6,8 @@
     <button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button> 
     
     <p>Your items:</p>
-    <select name="myItems" multiple="multiple" width="50" data-bind="options: items"> </select>
-    <input type="button" value="Remove" onclick="removeItem(myItems);" />
+    <select id="myItems" multiple="multiple" width="50" data-bind="options: items"> </select>
+    <button data-bind="click: removeSelected(), enable: itemToRemove().length > 0">Remove</button>
 </form>
     
 </div>​
