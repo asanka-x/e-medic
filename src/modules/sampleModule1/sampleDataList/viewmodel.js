@@ -1,4 +1,4 @@
-var SimpleListModel = function(items) {
+define([],function(items) {
     this.items = ko.observableArray(items);
     this.itemToAdd = ko.observable("");
     this.addItem = function() {
@@ -8,17 +8,13 @@ var SimpleListModel = function(items) {
         }
     }.bind(this);  // Ensure that "this" is always this view model
     
-    this.itemToRemove = ko.observable("");
+    ko.applyBindings(new SimpleListModel(["item1", "item2"]));
     
-    this.removeItem = function(ob){
-    	while (ob.selectedIndex != -1)
-    	{
-        	if (ob.selectedIndex != 0) 
-        		ob.options[ob.selectedIndex]=null;
-        		
-        	ob.options[ob.selectedIndex].selected = false;
-    	}
-    }
-};
+   /* this.itemToRemove = items.options[items.selectedIndex];
+    this.removeSelected = function () {
+            this.items.removeAll(this.removeSelected());
+            this.removeSelected(""); // Clear selection
+    }.bind(this);*/
+});
  
-ko.applyBindings(new SimpleListModel(["item1", "item2"]));​
+​
