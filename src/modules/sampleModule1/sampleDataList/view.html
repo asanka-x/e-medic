@@ -1,0 +1,13 @@
+<div class='liveExample'> 
+    
+<form data-bind="submit: addItem">
+    New item:
+    <input data-bind='value: itemToAdd, valueUpdate: "afterkeydown"' />
+    <button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button> 
+    
+    <p>Your items:</p>
+    <select name="myItems" multiple="multiple" width="50" data-bind="options: items"> </select>
+    <input type="button" value="Remove" onclick="removeItem(myItems);" />
+</form>
+    
+</div>​
