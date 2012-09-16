@@ -13,11 +13,7 @@ define(['Boiler', './settings', './departments/component', './clickCounter/compo
 		});
 		controller.start();
 
-		var controller = new Boiler.UrlController($(".appcontent"));
-		controller.addRoutes({
-			"/" : new LandingPageComponent()
-		});
-		controller.start();
+
 	};
 
 	return Module;
