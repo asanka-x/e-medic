@@ -1,6 +1,45 @@
 <article>
 	<header>
-		<h1>{{nls.title}}</h1>
+		<h1>Register New Born</h1>
 	</header>
-	<!--Implement the view here-->
+	<body>
+		<table>
+			<tr>
+				<td>Name: </td>
+				<td>
+				<input data-bind="value:babyName" width="175px"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Sex : </td>
+				<td><div id='jqxdropdowSex'></div></td>
+			</tr>
+			<tr>
+				<td>Date of Birth : </td>
+				<td><div id='jqxdatetimeinput'></div></td>
+			</tr>
+			
+			<tr>
+				<td> Birth Weight :</td>
+				<td>
+				<input data-bind="value:babyWeight" width="175px"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Critical Status : </td>
+				<td><div id='jqxdropdownCritical'></div></td>
+			</tr>
+			<tr>
+				<td colspan = "2">
+					
+            <div>
+                <input style='margin-left: 25px;' type="button" value="+" id='jqxButtonNew' />
+            </div>
+              
+        </div>
+					
+				</td>
+			</tr>
+		</table>
+	</body>
 </article>
