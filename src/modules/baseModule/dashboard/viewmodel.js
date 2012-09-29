@@ -9,7 +9,9 @@ define([], function() {
 		$("#jqxlistbox").jqxListBox({
 			source : source,
 			width : '100%',
-			height : '200px'
+			height : '200px',
+			theme: 'summer',
+			touchMode:'true'
 		});
 		// disable the sixth item.
 		$("#jqxlistbox").jqxListBox('disableAt', 5);
@@ -30,7 +32,8 @@ define([], function() {
 
 		$("#jqxButton1").jqxLinkButton({
 			width : '30%',
-			height : '40'
+			height : '40',
+			theme: 'summer'
 		});
 		$("#jqxButton2").jqxLinkButton({
 			width : '30%',
