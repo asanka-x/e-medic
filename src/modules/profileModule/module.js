@@ -1,14 +1,15 @@
-define(['Boiler', './settings', './samplePanel1/component', './samplePanel2/component'], function(Boiler, settings, SamplePanel1, SamplePanel2) {
+define(['Boiler', './settings', './addBaby/component', './addFamily/component', './addPregnant/component'], function(Boiler, settings, AddBaby, AddFamily,AddPregnant) {
 
 	var Module = function(globalContext) {
 
-		var context = new Boiler.Context("sampleModule1", globalContext);
+		var context = new Boiler.Context("profileModule", globalContext);
 		context.addSettings(settings);
 
 		var controller = new Boiler.UrlController($(".appcontent"));
 		controller.addRoutes( {
-			'samplepanel1' : new SamplePanel1(context),
-			'samplepanel2' : new SamplePanel2(context)
+			'add-baby' : new AddBaby(context),
+			'add-family' : new AddFamily(context),
+			'add-pregnant' : new AddPregnant(context)
 		});
 		controller.start();
 
