@@ -1,0 +1,22 @@
+<div class="portlet-blue">
+    <div class="title"><span>{{nls.title}}</span></div>
+    <div class="content">
+        <div class="input-field"><span>{{nls.createnew}}: </span><input class="txtbox-input " type="text"
+                                                                        data-bind='value:itemToAdd, valueUpdate: "afterkeydown"'/>
+            <button data-bind="enable: itemToAdd().length > 0, click: addItem"/>
+            {{nls.adddept}}</button>
+        </div>
+
+        <div class="sub-title">{{nls.deptlist}}</div>
+        <div class="input-field"><select class="select-input" multiple="multiple"
+                                         data-bind="options:allItems, selectedOptions:selectedItems"></select></div>
+        <div>
+            <button data-bind="click: removeSelected, enable: selectedItems().length > 0">
+                {{nls.remove}}
+            </button>
+            <button data-bind="click: sortItems, enable: allItems().length > 1">
+                {{nls.sort}}
+            </button>
+        </div>
+    </div>
+</div>

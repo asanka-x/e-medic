@@ -1,0 +1,10 @@
+#lotteryLost {
+	background:url('./assets/lost.jpeg') no-repeat center 45px;
+	height: 275px;
+	
+}
+
+#lotteryWon {
+	background:url('./assets/won.jpeg') no-repeat center 25px;
+	height: 275px;
+}
