@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>BoilerplateJS - JavaScript Reference Architecture</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <!-- optional static style definition to render the presentation fast, before styling get applied via JS code.
-        see 'src/modules/baseModule/theme/component.js' to see dynamic stylesheet setup on themes -->
-    <link rel="stylesheet" type="text/css" id="themeStylesheet" href="./src/modules/baseModule/theme/gray/common.css"/>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>BoilerplateJS - JavaScript Reference Architecture</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<meta http-equiv="quitbutton" content="visibility:visible;" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" type="text/css" id="themeStylesheet" href="./libs/jqwidgets/styles/jqx.darkblue.css"/>
+	</head>
 
-    <body>
+	<body>
 
-        <section id="page-content">
-            <header>
-                <a href="#" class="site-logo"> </a>
-                <section class="theme"></section>
-                <section class="language"></section>
-            </header>
-            <section class="lower-header-content">
-                <aside>
-                    <section class="main-menu"></section>
-                </aside>
-                <section class="appcontent"></section>
-            </section>
-            <footer>
-                <section class="footer"></section>
-            </footer>
-        </section>
+		<section id="page-content">
+			<header class="header">
+				<section class="theme"></section>
+				<section class="language"></section>
+			</header>
+			<section class="appcontent">
 
-        <script src="./libs/jquery/jquery-min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/underscore/underscore-1.3.3.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/signals/signals.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/crossroads/crossroads.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/hasher/hasher.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/pubsub/pubsub-20120708.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/jquery/jstree/jstree-1.0-rc3.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/backbone/backbone-min-0.9.2.js" type="text/javascript" charset="utf-8"></script>
+			</section>
+			<footer class="footer">
+				<section class="footer"></section>
+			</footer>
+		</section>
 
-        <script src="./libs/flot/jquery.flot.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/flot/jquery.flot.resize.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/amplifystore/amplify.store.min.1.1.0.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./libs/boilerplate/groundwork.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery/jquery-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jqwidgets/jqxcore.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jqwidgets/jqxbuttons.js" type="text/javascript" charset="utf-8"></script>
 
-        <script type="text/javascript" data-main="src/main" src="./libs/require/require.js"></script>
-    </body>
+		<script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/underscore/underscore-1.3.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/signals/signals.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/crossroads/crossroads.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/hasher/hasher.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/pubsub/pubsub-20120708.js" type="text/javascript" charset="utf-8"></script>
+<!--
+		<script src="./libs/jquery/jstree/jstree-1.0-rc3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/backbone/backbone-min-0.9.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/flot/jquery.flot.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/flot/jquery.flot.resize.js" type="text/javascript" charset="utf-8"></script>
+-->
+		<script src="./libs/amplifystore/amplify.store.min.1.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<!--	<script src="./libs/boilerplate/groundwork.js" type="text/javascript" charset="utf-8"></script>-->
+
+		<script type="text/javascript" data-main="src/main" src="./libs/require/require.js"></script>
+	</body>
 </html>
 <!-- BoilerplateJS v0.2rc -->
