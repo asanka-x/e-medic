@@ -1,6 +1,6 @@
 define({
     "root": {
-        "title": "My Title"
+        "dashboard": "Dashboard"
     },
     
     "sv" : true
