@@ -12,7 +12,7 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!.
 				ko.applyBindings(vm, panel.getDomElement());
 			}
 			
-			vm.renderComponents();
+			//vm.renderComponents();
 			panel.show();
 		}
 
