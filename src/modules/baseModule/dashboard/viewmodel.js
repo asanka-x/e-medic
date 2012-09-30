@@ -33,27 +33,38 @@ define([], function() {
 		$("#jqxButton1").jqxLinkButton({
 			width : '30%',
 			height : '40',
-			theme: 'summer'
+			theme: 'summer',
+			touchMode:'true'
 		});
 		$("#jqxButton2").jqxLinkButton({
 			width : '30%',
-			height : '40'
+			height : '40',
+			theme: 'summer',
+			touchMode:'true'
 		});
 		$("#jqxButton3").jqxLinkButton({
 			width : '30%',
-			height : '40'
+			height : '40',
+			theme: 'summer',
+			touchMode:'true'
 		});
 		$("#jqxButton4").jqxLinkButton({
 			width : '30%',
-			height : '40'
+			height : '40',
+			theme: 'summer',
+			touchMode:'true'
 		});
 		$("#jqxButton5").jqxLinkButton({
 			width : '30%',
-			height : '40'
+			height : '40',
+			theme: 'summer',
+			touchMode:'true'
 		});
 		$("#jqxButton6").jqxLinkButton({
 			width : '30%',
-			height : '40'
+			height : '40',
+			theme: 'summer',
+			touchMode:'true'
 		});
 
 	}
