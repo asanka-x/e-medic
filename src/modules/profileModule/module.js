@@ -1,4 +1,4 @@
-define(['Boiler', './settings', './addBaby/component', './addFamily/component', './addPregnant/component'], function(Boiler, settings, AddBaby, AddFamily,AddPregnant) {
+define(['Boiler', './settings', './addBaby/component', './addFamily/component', './addPregnant/component','./listProfiles/component'], function(Boiler, settings, AddBaby, AddFamily,AddPregnant,ListProfile) {
 
 	var Module = function(globalContext) {
 
@@ -9,7 +9,8 @@ define(['Boiler', './settings', './addBaby/component', './addFamily/component', 
 		controller.addRoutes( {
 			'add-baby' : new AddBaby(context),
 			'add-family' : new AddFamily(context),
-			'add-pregnant' : new AddPregnant(context)
+			'add-pregnant' : new AddPregnant(context),
+			'profiles':new ListProfile(context)
 		});
 		controller.start();
 

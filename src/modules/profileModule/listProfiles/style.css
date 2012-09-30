@@ -1,2 +1,21 @@
-/*Add css rules for the panel here*/
 
+        #list img
+        {
+            width: 50px;
+            height: 55px;
+        }
+        #list div
+        {
+            margin-top: -35px;
+            margin-left: 80px;
+        }
+        .jqx-listmenu-item
+        {
+            padding: 0px;
+            min-height: 57px;
+        }
+        div td
+        {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
