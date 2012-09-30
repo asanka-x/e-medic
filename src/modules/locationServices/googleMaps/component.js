@@ -12,6 +12,7 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!.
 				ko.applyBindings(vm, panel.getDomElement());
 			}
 			
+			vm.setNewDepartmentName(params.name);
 			panel.show();
 		}
 
