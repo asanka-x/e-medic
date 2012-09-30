@@ -8,7 +8,8 @@ define(function(require) {
 	 */
 	return [
 	  require('./baseModule/module'),
-	  require('./profileModule/module')
+	  require('./profileModule/module'),
+	  require('./locationServices/module')
 	  ];
 
 }); 

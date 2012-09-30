@@ -1,7 +1,7 @@
-define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!./nls/resources'], function(Boiler, template, ViewModel, styleText, nls) {
+define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css'], function(Boiler, template, ViewModel, styleText, nls) {
 
 	var Component = function(moduleContext) {
-		Boiler.ViewTemplate.setStyleText("{CSS_IDENTIFIER}", styleText);
+		Boiler.ViewTemplate.setStyleText("DEPAERTMENT_PANEL_CSS", styleText);
 
 		var panel, vm = null;
 		
@@ -12,7 +12,7 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!.
 				ko.applyBindings(vm, panel.getDomElement());
 			}
 			
-			vm.renderComponents();
+			vm.setNewDepartmentName(params.name);
 			panel.show();
 		}
 

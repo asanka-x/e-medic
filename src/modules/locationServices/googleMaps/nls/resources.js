@@ -1,6 +1,6 @@
 define({
     "root": {
-        "title": "Register Falily"
+        "title": "My Title"
     },
     
     "sv" : true
