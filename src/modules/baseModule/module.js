@@ -7,8 +7,7 @@ define(['Boiler', './dashboard/component', './language/component', './footer/com
         var controller = new Boiler.DomController($('#page-content'));
         //add routes with DOM node selector queries and relevant components
         controller.addRoutes({
-            ".language" : new LanguageComponent(context),
-            ".footer" : new FooterComponent(context)
+            ".language" : new LanguageComponent(context)
         });
         controller.start();
 

@@ -2,7 +2,7 @@ define([], function() {
 	var ViewModel = function(moduleContext) {
 
 		var self = this;
-
+/*
 		//Implement the viewmodel here
 		// Create Push Button.
 		$("#jqxButton").jqxButton({
@@ -46,6 +46,7 @@ define([], function() {
 			var date = $('#jqxdatetimeinput').jqxDateTimeInput('getDate');
 			alert(date);
 		});
+		*/
 	};
 	return ViewModel;
 });
