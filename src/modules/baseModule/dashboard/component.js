@@ -11,7 +11,7 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!.
 				vm = new ViewModel(moduleContext);
 				ko.applyBindings(vm, panel.getDomElement());
 			}
-			
+
 			panel.show();
 		}
 
