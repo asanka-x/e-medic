@@ -1,0 +1,195 @@
+.jqx-widget-e-medic-test-theme
+{
+  font-family: Verdana;
+}
+.jqx-widget-content-e-medic-test-theme
+{
+  color: #000635;
+  border-color: #FFFFFF;
+  background-color: #C4D0ED;
+  font-family: Verdana;
+}
+.jqx-widget-header-e-medic-test-theme
+{
+  color: #000635;
+  border-color: #FFFFFF;
+  background-color: #2061F9;
+  font-family: Verdana;
+}
+.jqx-grid-cell-e-medic-test-theme
+{
+  background-color: #C4D0ED;
+}
+.jqx-fill-state-normal-e-medic-test-theme
+{
+  color: #000635;
+  border-color: #000000;
+  background-color: #E2EBFF;
+}
+.jqx-grid-selectionarea-e-medic-test-theme
+{
+  border-color: #000000;
+  background-color: #E2EBFF;
+}
+.jqx-grid-cell-sort-e-medic-test-theme, .jqx-grid-cell-filter-e-medic-test-theme, .jqx-grid-cell-pinned-e-medic-test-theme
+{
+  background-color: #ADC5FF;
+  color: #000000;
+}
+.jqx-grid-cell-alt-e-medic-test-theme, .jqx-grid-cell-sort-alt-e-medic-test-theme, .jqx-grid-cell-filter-alt-e-medic-test-theme
+{
+  background-color: #EFEFEF;
+  color: #000000;
+}
+.jqx-fill-state-hover-e-medic-test-theme
+{
+  color: #000635;
+  border-color: #FFFFFF;
+  background-color: #354059;
+}
+.jqx-fill-state-pressed-e-medic-test-theme
+{
+  color: #000635;
+  border-color: #1E3F8C;
+  background-color: #728FD3;
+}
+.jqx-tabs-title-selected-top-e-medic-test-theme, .jqx-tabs-selection-tracker-top-e-medic-test-theme
+{
+  color: #000635;
+  border-color: #FFFFFF;
+  border-bottom: 1px solid #C4D0ED;
+  background-image: none ;
+  background-color: #C4D0ED;
+}
+.jqx-tabs-title-selected-bottom-e-medic-test-theme, .jqx-tabs-selection-tracker-bottom-e-medic-test-theme
+{
+  color: #000635;
+  border-color: #FFFFFF;
+  border-top: 1px solid #C4D0ED;
+  background-image: none ;
+  background-color: #C4D0ED;
+}
+.jqx-splitter-splitbar-hover-e-medic-test-theme
+{
+  background: #354059;
+}
+.jqx-splitter-splitbar-vertical-e-medic-test-theme, .jqx-splitter-splitbar-horizontal-e-medic-test-theme, .jqx-slider-track-horizontal-e-medic-test-theme, .jqx-slider-track-vertical-e-medic-test-theme
+{
+  background: #E2EBFF;
+}
+.jqx-splitter-collapse-button-horizontal-e-medic-test-theme, .jqx-splitter-collapse-button-vertical-e-medic-test-theme, .jqx-slider-rangebar-e-medic-test-theme
+{
+  background: #728FD3;
+}
+.jqx-scrollbar-state-normal-e-medic-test-theme
+{
+  background-color: #C4D0ED;
+  border-color: #7FA5FF;
+}
+.jqx-grid-bottomright-e-medic-test-theme, .jqx-panel-bottomright-e-medic-test-theme, .jqx-listbox-bottomright-e-medic-test-theme
+{
+  background-color: #C4D0ED;
+}
+.jqx-scrollbar-thumb-state-normal-e-medic-test-theme
+{
+  background-color: #E2EBFF;
+background-image: none;
+}
+.jqx-scrollbar-thumb-state-hover-e-medic-test-theme
+{
+  background-color: #354059;
+  background-image: none;
+}
+.jqx-scrollbar-thumb-state-pressed-e-medic-test-theme.jqx-progressbar-value-vertical-e-medic-test-theme
+{
+  background-color: #728FD3;
+  background-image: none;
+}
+.jqx-radiobutton-check-checked-e-medic-test-theme
+{
+  background: #000635;
+}
+.jqx-grid-column-sortascbutton-e-medic-test-theme, .jqx-expander-arrow-bottom-e-medic-test-theme, .jqx-window-collapse-button-e-medic-test-theme, .jqx-menu-item-arrow-up-e-medic-test-theme, .jqx-menu-item-arrow-top-up-e-medic-test-theme, .icon-arrow-up-e-medic-test-theme
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-menu-item-arrow-up-selected-e-medic-test-theme, .icon-arrow-up-selected-e-medic-test-theme
+{
+  background-image: url('images/icon-up.png');
+}
+.icon-arrow-up-hover-e-medic-test-theme
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-grid-column-menubutton-e-medic-test-theme, .jqx-grid-column-sortdescbutton-e-medic-test-theme, .jqx-expander-arrow-top-e-medic-test-theme, .jqx-window-collapse-button-collapsed-e-medic-test-theme, .jqx-menu-item-arrow-down-e-medic-test-theme, .jqx-menu-item-arrow-down-e-medic-test-theme, .icon-arrow-down-e-medic-test-theme
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-menu-item-arrow-down-selected-e-medic-test-theme, .icon-arrow-down-selected-e-medic-test-theme
+{
+  background-image: url('images/icon-down.png');
+}
+.icon-arrow-down-hover-e-medic-test-theme
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-tabs-arrow-left-e-medic-test-theme, .jqx-menu-item-arrow-top-left-e-medic-test-theme, .icon-arrow-left-e-medic-test-theme, .icon-arrow-down-left-e-medic-test-theme
+{
+  background-image: url('images/icon-left.png');
+}
+.icon-arrow-left-hover-e-medic-test-theme
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-menu-vertical-e-medic-test-theme
+{
+  background: #2061F9;
+}
+.jqx-menu-item-arrow-left-selected-e-medic-test-theme, .icon-arrow-left-selected-e-medic-test-theme
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-tabs-arrow-right-e-medic-test-theme, .jqx-menu-item-arrow-top-right-e-medic-test-theme, .icon-arrow-right-e-medic-test-theme
+{
+  background-image: url('images/icon-right.png');
+}
+.icon-arrow-right-hover-e-medic-test-theme
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-menu-item-arrow-right-selected-e-medic-test-theme, .icon-arrow-right-selected-e-medic-test-theme
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-window-close-button-e-medic-test-theme, .jqx-tabs-close-button-e-medic-test-theme, .icon-close-e-medic-test-theme
+{
+  background-image: url('images/close.png');
+}
+.jqx-tabs-close-button-selected-e-medic-test-theme
+{
+  background-image: url('images/close.png');
+}
+.jqx-tabs-close-button-hover-e-medic-test-theme
+{
+  background-image: url('images/close.png');
+}
+.jqx-widget-e-medic-test-theme .jqx-grid-column-header-e-medic-test-theme, .jqx-widget-e-medic-test-theme .jqx-grid-cell-e-medic-test-theme, .jqx-widget-e-medic-test-theme .jqx-grid-group-cell-e-medic-test-theme, .jqx-grid-cell-e-medic-test-theme
+{
+  border-color: #D3E0FF;
+}
+.jqx-window-modal-e-medic-test-theme
+{
+  background: #000635;
+}
+.jqx-window-modal-e-medic-test-theme
+{
+  border-color: #888888;
+}
+.jqx-checkbox-check-checked-e-medic-test-theme
+{
+  background-image: url('images/check_black.png');
+}
+.jqx-checkbox-check-indeterminate-e-medic-test-theme
+{
+  background-image: url('images/check_indeterminate_black.png');
+}
