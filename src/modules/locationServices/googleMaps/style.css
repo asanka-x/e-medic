@@ -1,2 +1,7 @@
-/*Add css rules for the panel here*/
+.gmap {
+	height: 330px;
+	width: 100%;
+	margin: 0px;
+	padding: 0px
+}
 
