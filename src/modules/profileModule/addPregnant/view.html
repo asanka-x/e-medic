@@ -1,145 +1,103 @@
-<article>
-	<header>
-		<h1>{{nls.title}}</h1>
-	</header>
-	<div id='jqxpanel' style="font-size: 13px; font-family: Verdana; float: left; margin-bottom: 20px">
-		<table >
-			<tr >
-				<td> Name: </td>
-				<td>
-				<input type="text" data-bind="value: Name" />
-				</td>
-			</tr>
-			<tr>
-				<td> Address: </td>
-				<td>
-				<input type="text" data-bind="value:Address" />
-				</td>
-			</tr>
-			<tr>
-				<td>Age: </td>
-				<td>
-				<input type="text"  data-bind="value:Age"/>
-				</td>
-			</tr>
-
-			<tr>
-				<td> ResidentialStatus: </td>
-				<td>
-				<input type="text"  data-bind="value:ResidentialStatus"/>
-				</td>
-			</tr>
-
-			<tr>
-				<td> TetunasStatus: </td>
-				<td>
-				<input type="text" data-bind="value:TetunasStatus" />
-				</td>
-			</tr>
-
-			<tr>
-				<td> RubellaStatus: </td>
-				<td>
-				<input type="text" data-bind="value:RubellaStatus" />
-				</td>
-			</tr>
-
-			<tr>
-				<td> BooldTestStatus: </td>
-				<td>
-				<input type="text" data-bind="value:BooldTestStatus" />
-				</td>
-			</tr>
-
-			<tr>
-				<td> BMIFirstCome: </td>
-				<td>
-				<input type="text" data-bind="value:BMIFirstCome" />
-				</td>
-			</tr>
-
-			<tr>
-				<td> VDRLtest: </td>
-				<td>
-				<input type="text" data-bind="value:VDRLtest" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>NumberOfPregnancy: </td>
-				<td>
-				<input type="text" data-bind="value:NumberOfPregnancy" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>LastPregnancyResult: </td>
-				<td>
-				<input type="text" data-bind="value:LastPregnancyResult" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>NumberOfWeeksPregnancy: </td>
-				<td>
-				<input type="text" data-bind="value:NumberOfWeeksPregnancy" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>CriticalStatus: </td>
-				<td>
-				<input type="text" data-bind="value:CriticalStatus" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>ExpectDate: </td>
-				<td><div id='jqxdatetimeinput'></div>
-				<div style="margin-top: 10px;">
-					<!--	<input id="getDateButton" type="button" value="Get Date"/>
-					<input id="setDateButton" type="button" value="Set Date"/>
-					-->
-				</div></td>
-			</tr>
-
-			<tr>
-				<td>RiskFactors: </td>
-				<td>
-				<input type="text" data-bind="value:RiskFactors" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>FirstComeWeeks: </td>
-				<td>
-				<input type="text" data-bind="value:FirstComeWeeks" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>FirstComeWeeks: </td>
-				<td>
-				<input type="text" data-bind="value:FirstComeWeeks" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>FirstComeWeight: </td>
-				<td>
-				<input type="text" data-bind="value:FirstComeWeight" />
-				</td>
-			</tr>
-
-			<tr>
-				<td>DeliveryDate:</td>
-				<td>
-				<input type="text" data-bind="value:DeliveryDate" />
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div >
-		<input type="button" value="ADD FAMILY" id='jqxButton' />
-	</div>
-</article>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="name"> NAME </label>
+		<input name="name" id="name" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="address"> ADDRESS </label>
+		<input name="address" id="address" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="age"> AGE </label>
+		<input name="age" id="age" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="residentialStatus"> RESIDENTIAL STATUS </label>
+		<input name="residentialStatus" id="residentialStatus" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="tetunasStatus"> TETUNAS STATUS </label>
+		<input name="tetunasStatus" id="tetunasStatus" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="rubellaStatus"> RUBELLA STATUS </label>
+		<input name="rubellaStatus" id="rubellaStatus" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="booldTestStatus"> BLOOD TEST STATUS </label>
+		<input name="booldTestStatus" id="booldTestStatus" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="bmiFirstCome"> BMI FIRST COME </label>
+		<input name="bmiFirstCome" id="bmiFirstCome" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="vdrlTest"> VDRL TEST </label>
+		<input name="vdrlTest" id="vdrlTest" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="numberOfPregnancy"> NUMBER OF PREGNANCY </label>
+		<input name="numberOfPregnancy" id="numberOfPregnancy" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="lastPregnancyResult"> LAST PREGNANCY RESULT </label>
+		<input name="lastPregnancyResult" id="lastPregnancyResult" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="numberOfWeeksPregnancy"> NUMBER OF WEEKS PREGNANCY </label>
+		<input name="numberOfWeeksPregnancy" id="numberOfWeeksPregnancy" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="criticalStatus"> CRITICAL STATUS </label>
+		<input name="criticalStatus" id="criticalStatus" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="expectDate"> EXPECT DATE </label>
+		<input name="expectDate" id="expectDate" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="riskFactors"> RISK FACTORS </label>
+		<input name="riskFactors" id="riskFactors" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="firstComeWeeks"> FIRST COME WEEKS </label>
+		<input name="firstComeWeeks" id="firstComeWeeks" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<label for="deliveryDate"> DELIVERY DATE </label>
+		<input name="deliveryDate" id="deliveryDate" placeholder="Enter Here" value="" type="text" />
+	</fieldset>
+</div>
+<a id="buttonAdd" data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="plus" data-iconpos="left"> ADD FAMILY </a>
