@@ -7,34 +7,65 @@
 		<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />
 		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./src/bindings/profile-list.js" type="text/javascript"></script>
 
 	</head>
 
 	<body>
 		<div data-role="page">
 
-			<div data-role="header">
+			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back">Back</a>
 
 				<h1>e-medic</h1>
 			</div><!-- /header -->
 
-			<div data-role="content">
+			<div data-role="content" id="list-content">
+				<!--
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Search ticker or firm name..." data-inset="true">
+				<li data-filtertext="NASDAQ:ADBE Adobe Systems Incorporated">
+				<a href="#">Adobe</a>
+				</li>
+				<li data-filtertext="NASDAQ:AMZNL Amazon.com, Inc.">
+				<a href="#">Amazon</a>
+				</li>
+				<li data-filtertext="NASDAQ:AAPL Apple Inc.">
+				<a href="#">Apple</a>
+				</li>
+				<li data-filtertext="NASDAQ:GOOG Google Inc.">
+				<a href="#">Google</a>
+				</li>
+				<li data-filtertext="NYSE:IBM Intl. International Business Machines Corp.">
+				<a href="index.html">IBM</a>
+				</li>
+				<li data-filtertext="NASDAQ:MSFT Microsoft Corporation">
+				<a href="#">Microsoft</a>
+				</li>
+				<li data-filtertext="NASDAQ:YHOO Yahoo! Inc.">
+				<a href="#">Yahoo</a>
+				</li>
+				<li data-filtertext="USA U.S.A. United States of America">
+				<a href="#">United States</a>
+				</li>
+				</ul>
+				-->
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed">
 				<ul data-role="listview" data-divider-theme="a" data-inset="true">
 					<li data-role="list-divider" role="heading">
 						PROFILES
 					</li>
 					<li data-theme="a">
-						<a href="#add-family" data-transition="turn" data-icon="star">FAMILY </a>
+						<a href="new-family.html" data-transition="turn" data-icon="star">FAMILY </a>
 					</li>
 					<li data-theme="a">
-						<a href="#add-baby" data-transition="turn" data-icon="star">BABY </a>
+						<a href="new-baby.html" data-transition="turn" data-icon="star">BABY </a>
 					</li>
 					<li data-theme="a">
-						<a href="#add-pregnant" data-transition="turn" data-icon="star">PREGNANCY </a>
+						<a href="new-pregnancy.html" data-transition="turn" data-icon="star">PREGNANCY </a>
 					</li>
 				</ul>
-			</div><!-- /content -->
+			</div>
 
 		</div><!-- /page -->
 	</body>
