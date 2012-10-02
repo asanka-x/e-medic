@@ -21,14 +21,12 @@
 				center = new google.maps.LatLng(lat, lng);
 				var myOptions = {
 					zoom : 14,
-					center : center,
-					mapTypeId : google.maps.MapTypeId.SATELLITE
+					center : center
 				}
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
 			}
 
-			function detectBrowser() {
+			/*function detectBrowser() {
 				var useragent = navigator.userAgent;
 				var mapdivMap = document.getElementById("map_canvas");
 
@@ -39,9 +37,9 @@
 					mapdivMap.style.width = '600px';
 					mapdivMap.style.height = '800px';
 				}
-			};
+			};*/
 
-			$(document).bind('pageload', function() {
+			/*$(document).bind('pageload', function() {
 				if (navigator.geolocation) {
 					detectBrowser();
 					navigator.geolocation.getCurrentPosition(function(position) {
@@ -51,7 +49,7 @@
 					detectBrowser();
 					Newinitialize(52.636161, -1.133065);
 				}
-			});
+			});*/
 		</script>
 
 	</head>
