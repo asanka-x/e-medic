@@ -19,13 +19,33 @@
 		<script src="./libs/jquery.mobile.simpledialog.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jqm-datebox.mode.slidebox.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--Sinhala convention -->
+		<script type="text/javascript" src="./libs/akuru/prefix.js"></script>
+		<script type="text/javascript" src="./libs/akuru/unicodeSinhala.js"></script>
+		<script type="text/javascript" src="./libs/akuru/tokenizer.js"></script>
+		<script type="text/javascript" src="./libs/akuru/converters/legacyConverter.js"></script>
+		<script type="text/javascript" src="./libs/akuru/vendors/htmlparser.js"></script>
+		<script type="text/javascript" src="./libs/akuru/akuru.js"></script>
+		<script type="text/javascript" src="./libs/akuru/loader.js"></script>
+
+		<script type='text/javascript'>
+			akuru.load('derana');
+			// akuru.load('paras');
+			akuru.load('arjun');
+			akuru.load('paras');
+
+			// akuru.ready(function() {
+			// 	akuru.enable('#body', 'derana');
+			// });
+		</script>
 	</head>
 
 	<body>
-		<div data-role="page">
+		<div data-role="page" class='paras'>
 
 			<div data-role="header" data-position="fixed">
-				<a href="" data-rel="back" data-theme="c">Back</a>
+				<a href="" data-rel="back" data-theme="c">ආපසු</a>
 
 				<h1>m-Midwife</h1>
 			</div><!-- /header -->
@@ -35,27 +55,27 @@
 				<form action="#" method="get">
 
 					<div data-role="fieldcontain">
-						<label for="wifeName">WIFE NAME</label>
+						<label for="wifeName">භර්යයාවගෙ නම</label>
 						<input type="text" name="wifeName" id="wifeName" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="husbandName">HUSBAND NAME</label>
+						<label for="husbandName">ස්වාමි පුරුෂයාගේ නම</label>
 						<input type="text" name="husbandName" id="husbandName" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="address">ADDRESS</label>
+						<label for="address">ලිපිනය</label>
 						<textarea cols="40" rows="8" name="address" id="address"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="marriedAge">MARRIED AGE</label>
+						<label for="marriedAge">විවාහයේදී වයස</label>
 						<input type="text" name="marriedAge" id="marriedAge" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="dobOfWife">DATE OF BIRTH OF WIFE</label>
+						<label for="dobOfWife">භර්යයාවගෙ උපන්දිනය</label>
 						<input name="dobOfWife" id="dobOfWife" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
 					</div>
 
@@ -63,7 +83,7 @@
 						<div data-role="navbar">
 							<ul>
 								<li>
-									<a type="submit" href="new-pregnancy.html" data-ajax="false" data-theme="c">Submit</a>
+									<a type="submit" href="new-pregnancy.html" data-ajax="false" data-theme="c">අතුලත් කරන්න</a>
 								</li>
 							</ul>
 						</div><!-- /navbar -->

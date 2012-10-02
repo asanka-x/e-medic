@@ -19,11 +19,31 @@
 		<script src="./libs/jquery.mobile.simpledialog.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jqm-datebox.mode.slidebox.min.js" type="text/javascript" charset="utf-8"></script>
+		
+				<!--Sinhala convention -->
+		<script type="text/javascript" src="./libs/akuru/prefix.js"></script>
+		<script type="text/javascript" src="./libs/akuru/unicodeSinhala.js"></script>
+		<script type="text/javascript" src="./libs/akuru/tokenizer.js"></script>
+		<script type="text/javascript" src="./libs/akuru/converters/legacyConverter.js"></script>
+		<script type="text/javascript" src="./libs/akuru/vendors/htmlparser.js"></script>
+		<script type="text/javascript" src="./libs/akuru/akuru.js"></script>
+		<script type="text/javascript" src="./libs/akuru/loader.js"></script>
+
+		<script type='text/javascript'>
+			akuru.load('derana');
+			// akuru.load('paras');
+			akuru.load('arjun');
+			akuru.load('paras');
+
+			// akuru.ready(function() {
+			// 	akuru.enable('#body', 'derana');
+			// });
+		</script>
 
 	</head>
 
 	<body>
-		<div data-role="page">
+		<div data-role="page" class='paras'>
 
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">Back</a>
@@ -35,36 +55,36 @@
 				<form action="#" method="get">
 
 					<div data-role="fieldcontain">
-						<label for="name">NAME</label>
+						<label for="name">නම</label>
 						<input type="text" name="name" placeholder="Enter Here"  id="name" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup">
 							<legend>
-								SEX
+								ස්ත්‍රී පුරුෂ භාවය
 							</legend>
 							<input type="radio" name="radio-choice-1" id="radio-choice-1" data-theme="a" value="choice-1" checked="checked" />
-							<label for="radio-choice-1">Male</label>
+							<label for="radio-choice-1">පුරුෂ</label>
 
 							<input type="radio" name="radio-choice-1" id="radio-choice-2" data-theme="a" value="choice-2"  />
-							<label for="radio-choice-2">Female</label>
+							<label for="radio-choice-2">ස්ත්‍රී</label>
 
 						</fieldset>
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="dob">DATE OF BIRTH</label>
+						<label for="dob">උපන් දිනය</label>
 						<input name="dob" id="dob" type="text" placeholder="Select Date" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="weight">BIRTH WEIGHT</label>
+						<label for="weight">උපත් බර</label>
 						<input type="text" name="weight" placeholder="Enter Here"  id="weight" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="critical">CRITICAL STATUS</label>
+						<label for="critical">අවදානම් ත්ත්වය</label>
 						<input type="text" name="critical" placeholder="Enter Here"  id="critical" value=""  />
 					</div>
 
