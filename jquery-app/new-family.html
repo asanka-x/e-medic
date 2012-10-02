@@ -27,44 +27,31 @@
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">Back</a>
 
-				<h1>e-medic</h1>
+				<h1>m-Midwife</h1>
 			</div><!-- /header -->
 
 			<div data-role="content">
-
-				<!--<div class="ui-field-contain ui-body" data-mini="false" data-theme="c" data-content-theme="d">
-				<label for="mode1" class="ui-input-text" style="vertical-align: middle; ">WIFE NAME</label>
-				<input name="wifeName" id="wifeName" type="text">
-				<label for="mode2" class="ui-input-text" style="vertical-align: middle; ">HUSBAND NAME</label>
-				<input name="husbandName" id="husbandName" type="text">
-				<label for="mode6" class="ui-input-text" style="vertical-align: middle; ">ADDRESS</label>
-				<input name="address" id="address" type="text">
-				<label for="mode3" class="ui-input-text" style="vertical-align: middle; ">MARRIED AGE</label>
-				<input name="marriedAge" id="marriedAge" type="text">
-				<label for="mode7" class="ui-input-text" style="vertical-align: middle; ">DATE OF BIRTH</label>
-				<input name="mode4" id="mode4" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
-				</div>-->
 
 				<form action="#" method="get">
 
 					<div data-role="fieldcontain">
 						<label for="wifeName">WIFE NAME</label>
-						<input type="text" name="wifeName" placeholder="Enter Here"  id="wifeName" value=""  />
+						<input type="text" name="wifeName" id="wifeName" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="husbandName">HUSBAND NAME</label>
-						<input type="text" name="husbandName" placeholder="Enter Here"  id="husbandName" value=""  />
+						<input type="text" name="husbandName" id="husbandName" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="address">ADDRESS</label>
-						<textarea cols="40" rows="8" placeholder="Enter Here" name="address" id="address"></textarea>
+						<textarea cols="40" rows="8" name="address" id="address"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="marriedAge">MARRIED AGE</label>
-						<input type="text" name="marriedAge" placeholder="Enter Here"  id="marriedAge" value=""  />
+						<input type="text" name="marriedAge" id="marriedAge" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
@@ -72,29 +59,18 @@
 						<input name="dobOfWife" id="dobOfWife" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
 					</div>
 
-					<div data-role="fieldcontain">
-						<fieldset class="ui-grid-a">
-							<div class="ui-block-a">
-								<button type="submit" data-theme="a">
-									Cancel
-								</button>
-							</div>
-							<div class="ui-block-b">
-								<button type="submit" data-theme="c">
-									Submit
-								</button>
-							</div>
-						</fieldset>
+					<div data-role="footer" data-position="fixed">
+						<div data-role="navbar">
+							<ul>
+								<li>
+									<a type="submit" href="new-pregnancy.html" data-ajax="false" data-theme="c">Submit</a>
+								</li>
+							</ul>
+						</div><!-- /navbar -->
 					</div>
 				</form>
-
-				<div data-role="footer" data-position="fixed">
-					<center>
-						University of Peradeniya
-					</center>
-				</div>
-
 			</div><!-- /page -->
+		</div>
 	</body>
 </html>
 

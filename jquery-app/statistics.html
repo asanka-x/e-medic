@@ -15,7 +15,37 @@
 	</head>
 
 	<body>
-		<div data-role="page">
+
+		<script type="text/javascript" >
+			var $prehashval = "";
+			function loop() {
+				if (location.hash.slice(1) != $prehashval)
+					hashChanged();
+
+				$prehashval = location.hash.slice(1);
+				setTimeout("loop()", 100);
+			}
+
+			function hashChanged() {
+				var $output;
+				switch (location.hash.slice(1)) {
+					case "pregnant":
+						document.getElementById('pregnant').style.display = "";
+						document.getElementById('new-born').style.display = "none";
+						break;
+					case "new-born":
+						document.getElementById('pregnant').style.display = "none";
+						document.getElementById('new-born').style.display = "";
+						break;
+					default:
+						$output = location.hash.slice(1);
+				}
+			}
+
+			loop();
+		</script>
+
+		<div id="pregnant" data-role="page" >
 
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-ajax="false" data-theme="c">Back</a>
@@ -23,40 +53,43 @@
 				<h1>m-Midwife</h1>
 			</div><!-- /header -->
 
-			<div data-role="content" id="list-content">
-
+			<div data-role="content" id="">
+				This is Page 1
 			</div><!-- /content -->
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="new-family.html" data-ajax="false" data-theme="c">New Family</a>
+							<a href="#pregnant" data-transition="slide" data-ajax="false" data-theme="c">Pregnant Mother</a>
+						</li>
+						<li>
+							<a href="#new-born" data-transition="slide" data-ajax="false" data-theme="c">New Borns</a>
 						</li>
 					</ul>
 				</div><!-- /navbar -->
 
 			</div>
 		</div>
-		
-		<div data-role="page-profile">
+
+		<div id="new-born" data-role="page" style="display:none">
 
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-ajax="false" data-theme="c">Back</a>
 
-				<h1>e-medic</h1>
+				<h1>m-Midwife</h1>
 			</div><!-- /header -->
 
-			<div data-role="content" id="list-content">
-
+			<div data-role="content" id="">
+				This is Page 2
 			</div><!-- /content -->
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="new-baby.html" data-ajax="false" data-theme="c">New Baby</a>
+							<a href="#pregnant" data-transition="slide" data-ajax="false" data-theme="c">Pregnant Mother</a>
 						</li>
 						<li>
-							<a href="new-pregnancy.html" data-ajax="false" data-theme="c">New Pregnancy</a>
+							<a href="#new-born" data-transition="slide"  data-ajax="false" data-theme="c">New Borns</a>
 						</li>
 					</ul>
 				</div><!-- /navbar -->
