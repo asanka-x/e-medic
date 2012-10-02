@@ -28,7 +28,7 @@
 			<div data-role="content">
 				<ul data-role="listview" data-filter="true" data-filter-placeholder="Search ticker or firm name..." data-inset="true" data-theme="a" data-bind="foreach:familyProfile">
 					<li data-filtertext="NASDAQ:ADBE Adobe Systems Incorporated">
-						<a href="#family-profile" data-bind="text: family, click:$root.familyClicked"></a>
+						<a href="#family-profile" data-ajax="false" data-bind="text: family, click:$root.familyClicked"></a>
 					</li>
 				</ul>
 			</div><!-- /content -->
@@ -53,7 +53,19 @@
 			</div><!-- /header -->
 
 			<div data-role="content" id="list-content">
-
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+					
+					</div>
+					<div class="ui-block-b">
+				
+					</div>
+				</div>
+				<div class="ui-grid-solo">
+					<div class="ui-block-a">
+					
+					</div>
+				</div>
 			</div><!-- /content -->
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
