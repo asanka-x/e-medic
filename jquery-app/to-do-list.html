@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="quitbutton" content="visibility:visible;" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!--<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />-->
+		<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<!--<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/demos.css" rel="stylesheet" /> -->
+
+		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="./src/bindings/to-do-list.js" type="text/javascript" charset="utf-8"></script>-->
+
+	</head>
+
+	<body>
+		<div data-role="page">
+
+			<div data-role="header" data-position="fixed">
+				<h1>e-medic</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<form data-bind="submit: addTask">
+					Add task:
+					<input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+					<button type="submit">
+						Add
+					</button>
+				</form>
+
+				<ul data-role="listview" data-bind="foreach: tasks, visible: tasks().length > 0">
+					<li>
+						<input type="checkbox" data-bind="checked: isDone" />
+						<label><input type="checkbox" name="checkbox-0" /> I agree </label>
+						<input data-bind="value: title, disable: isDone" />
+						<a href="#" data-bind="click: $parent.removeTask">Delete</a>
+					</li>
+				</ul>
+
+				You have <b data-bind="text: incompleteTasks().length">&nbsp;</b> incomplete task(s) <span data-bind="visible: incompleteTasks().length == 0"> - it's beer time!</span>
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed">
+				<center>
+					University of Peradeniya
+				</center>
+			</div>
+		</div><!-- /page -->
+		<script type="text/javascript">
+			function Task(data) {
+				this.title = ko.observsssable(data.title);
+				this.isDone = ko.observable(data.isDone);
+			}
+
+			function TaskListViewModel() {
+				// Data
+				var self = this;
+				self.tasks = ko.observableArray([]);
+				self.newTaskText = ko.observable();
+				self.incompleteTasks = ko.computed(function() {
+					return ko.utils.arrayFilter(self.tasks(), function(task) {
+						return !task.isDone()
+					});
+				});
+
+				// Operations
+				self.addTask = function() {
+					self.tasks.push(new Task({
+						title : this.newTaskText()
+					}));
+					self.newTaskText("");
+				};
+				self.removeTask = function(task) {
+					self.tasks.remove(task)
+				};
+			}
+
+
+			ko.applyBindings(new TaskListViewModel());
+		</script>
+	</body>
+</html>
+

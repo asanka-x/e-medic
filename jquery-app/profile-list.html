@@ -10,7 +10,9 @@
 
 		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
-		<script src="./src/bindings/profile-list.js" type="text/javascript"></script>
+		<script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--<script src="./src/bindings/profile-list.js" type="text/javascript"></script>-->
 
 	</head>
 
@@ -23,8 +25,12 @@
 				<h1>m-Midwife</h1>
 			</div><!-- /header -->
 
-			<div data-role="content" id="list-content">
-
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Search ticker or firm name..." data-inset="true" data-theme="a" data-bind="foreach:familyProfile">
+					<li data-filtertext="NASDAQ:ADBE Adobe Systems Incorporated">
+						<a href="#family-profile" data-bind="text: family, click:$root.familyClicked"></a>
+					</li>
+				</ul>
 			</div><!-- /content -->
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
@@ -37,8 +43,8 @@
 
 			</div>
 		</div>
-		
-		<div data-role="page-profile">
+
+		<div data-role="page" id="family-profile">
 
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-ajax="false" data-theme="c">Back</a>
@@ -62,6 +68,35 @@
 				</div><!-- /navbar -->
 			</div>
 		</div>
+		<script type="text/javascript">
+			function FamilyProfilesViewModel() {
+				var self = this;
+
+				this.familyProfile = ko.observableArray();
+
+				this.familyClicked = function(family) {
+					console.log(family);
+				};
+
+				/*
+				 * Initialization code:
+				 * Get the employee list from server
+				 */
+				this.familyProfile = [{
+					"id" : "01",
+					"family" : "Senawiratne K.K.P."
+				}, {
+					"id" : "02",
+					"family" : "Perera L.P."
+				}, {
+					"id" : "03",
+					"family" : "Ranaweera J.N."
+				}]
+			}
+
+
+			ko.applyBindings(new FamilyProfilesViewModel());
+		</script>
 	</body>
 </html>
 
