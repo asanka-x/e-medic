@@ -1,3 +1,4 @@
+/*
 $(document).ready(function() {
 	$.getJSON('src/bindings/dummyServer/test.json', function(data) {
 		var items = [];
@@ -14,3 +15,4 @@ $(document).ready(function() {
 		$('.my-new-list').listview();
 	});
 });
+*/
