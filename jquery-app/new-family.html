@@ -4,59 +4,97 @@
 		<meta charset="utf-8">
 		<meta http-equiv="quitbutton" content="visibility:visible;" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />
+
+		<!--<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />-->
+		<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/demos.css" rel="stylesheet" />
+
 		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
 
+		<script src="./libs/jqm-datebox.core.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile.simpledialog.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jqm-datebox.mode.slidebox.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
 		<div data-role="page">
 
 			<div data-role="header" data-position="fixed">
-				<a href="" data-rel="back">Back</a>
+				<a href="" data-rel="back" data-theme="c">Back</a>
 
 				<h1>e-medic</h1>
 			</div><!-- /header -->
 
 			<div data-role="content">
-				<div data-role="fieldcontain">
-					<fieldset data-role="controlgroup">
-						<label data-theme="a" for="textinput1"> WIFE NAME </label>
-						<input data-theme="a" name="" id="wifeName" placeholder="Enter Here" value="" type="text" />
-					</fieldset>
-				</div>
-				<div data-role="fieldcontain" >
-					<fieldset data-role="controlgroup">
-						<label data-theme="a" for="textinput2"> HUSBAND NAME </label>
-						<input data-theme="a" name="" id="husbandName" placeholder="Enter Here" value="" type="text" />
-					</fieldset>
-				</div>
-				<div data-role="fieldcontain" >
-					<fieldset data-role="controlgroup">
-						<label data-theme="a" for="textinput3"> ADDRESS </label>
-						<input data-theme="a" name="" id="address" placeholder="Enter Here" value="" type="text" />
-					</fieldset>
-				</div>
-				<div data-role="fieldcontain" >
-					<fieldset data-role="controlgroup">
-						<label data-theme="a" for="textinput5"> MARRIED AGE </label>
-						<input data-theme="a" name="" id="marriedAge" placeholder="Enter Here" value="" type="text" />
-					</fieldset>
-				</div>
-				<div data-role="fieldcontain" >
-					<fieldset data-role="controlgroup">
-						<label data-theme="a" for="mydate">DATE OF BIRTH</label>
-						<input data-theme="a" name="mydate" id="mydate" type="date" data-role="datebox"
-						data-options='{"mode": "calbox", "calWeekMode": true, "calWeekModeFirstDay": 1}'>
-					</fieldset>
-				</div>
-			</div><!-- /content -->
-			<div data-role="footer" data-position="fixed">
 
-			</div>
+				<!--<div class="ui-field-contain ui-body" data-mini="false" data-theme="c" data-content-theme="d">
+				<label for="mode1" class="ui-input-text" style="vertical-align: middle; ">WIFE NAME</label>
+				<input name="wifeName" id="wifeName" type="text">
+				<label for="mode2" class="ui-input-text" style="vertical-align: middle; ">HUSBAND NAME</label>
+				<input name="husbandName" id="husbandName" type="text">
+				<label for="mode6" class="ui-input-text" style="vertical-align: middle; ">ADDRESS</label>
+				<input name="address" id="address" type="text">
+				<label for="mode3" class="ui-input-text" style="vertical-align: middle; ">MARRIED AGE</label>
+				<input name="marriedAge" id="marriedAge" type="text">
+				<label for="mode7" class="ui-input-text" style="vertical-align: middle; ">DATE OF BIRTH</label>
+				<input name="mode4" id="mode4" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
+				</div>-->
 
-		</div><!-- /page -->
+				<form action="#" method="get">
+
+					<div data-role="fieldcontain">
+						<label for="wifeName">WIFE NAME</label>
+						<input type="text" name="wifeName" placeholder="Enter Here"  id="wifeName" value=""  />
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="husbandName">HUSBAND NAME</label>
+						<input type="text" name="husbandName" placeholder="Enter Here"  id="husbandName" value=""  />
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="address">ADDRESS</label>
+						<textarea cols="40" rows="8" placeholder="Enter Here" name="address" id="address"></textarea>
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="marriedAge">MARRIED AGE</label>
+						<input type="text" name="marriedAge" placeholder="Enter Here"  id="marriedAge" value=""  />
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="dobOfWife">DATE OF BIRTH OF WIFE</label>
+						<input name="dobOfWife" id="dobOfWife" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
+					</div>
+
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a">
+							<div class="ui-block-a">
+								<button type="submit" data-theme="a">
+									Cancel
+								</button>
+							</div>
+							<div class="ui-block-b">
+								<button type="submit" data-theme="c">
+									Submit
+								</button>
+							</div>
+						</fieldset>
+					</div>
+				</form>
+
+				<div data-role="footer" data-position="fixed">
+					<center>
+						University of Peradeniya
+					</center>
+				</div>
+
+			</div><!-- /page -->
 	</body>
 </html>
 
