@@ -166,12 +166,18 @@
 				});
 			});
 		</script>
-	</head>
+		<style type="text/css">
+			.note {
+				font-size: 0.8em;
+			}
+			.jqplot-yaxis-tick {
+				white-space: nowrap;
+			}
+		</style>
 	</head>
 
 	<body>
-		<!-- pregnant mother statics-->
-		<!--wiegth-->
+
 		<div data-role="page" id="Pegweight">
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">ආපසු</a>
@@ -181,30 +187,31 @@
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a id="abc" href="pregnant-stat.html" data-ajax="false"  data-theme="c" data-prefetch="true" data-transition="slidefade">Pregnant</a>
+							<a href="pregnant-stat.html" data-ajax="false"  data-theme="a" data-prefetch="true" data-transition="slidefade">Pregnant</a>
 						</li>
 						<li>
-							<a href="new-baby-stat.html" data-ajax="false"  data-theme="c" data-prefetch="true" data-transition="slidefade">New Born</a>
+							<a href="new-baby-stat.html" data-ajax="false"  data-theme="a" data-prefetch="true" data-transition="slidefade">New Born</a>
 						</li>
 					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /header -->
-
-			<div id="pregnantWieght" style="margin-top:20px; margin-left:20px; width:300px; height:300px;"></div>
-
+				</div>
+			</div>
+			<div data-role="content">
+				<div id="pregnantWieght" style="width:300px; height:300px;"></div>
+			</div>
 			<div >
 				<div data-role="footer" data-id="navfooter" data-position="fixed">
 					<div data-role="navbar">
 						<ul>
 							<a href="#Pegvaccine" data-ajax="false" data-role="button" data-icon="arrow-l">Left</a>
-							<a id="sds" href="#Pegattendence" data-ajax="false" data-role="button" data-icon="arrow-r">Right</a>
+							<a href="#Pegattendence" data-ajax="false" data-role="button" data-icon="arrow-r">Right</a>
 						</ul>
 					</div>
-				</div><!-- /footer -->
+				</div>
 			</div>
-		</div><!-- /page -->
+		</div>
 
-		<!--attendence-->
+
+
 		<div data-role="page" id="Pegattendence">
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">ආපසු</a>
@@ -219,21 +226,11 @@
 							<a href="new-baby-stat.html" data-ajax="false"  data-theme="c" data-prefetch="true" data-transition="slidefade">New Born</a>
 						</li>
 					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /header -->
-
-			<!-- Example scripts go here -->
-
-			<style type="text/css">
-				.note {
-					font-size: 0.8em;
-				}
-				.jqplot-yaxis-tick {
-					white-space: nowrap;
-				}
-			</style>
-
-			<div id="pregnantAttendence" style="width:400px; height:300px;"></div>
+				</div>
+			</div>
+			<div data-role="content">
+				<div id="pregnantAttendence" style="width:400px; height:300px;"></div>
+			</div>
 			<div >
 				<div data-role="footer" data-id="navfooter" data-position="fixed">
 					<div data-role="navbar">
@@ -242,12 +239,16 @@
 							<a href="#vaccine" data-ajax="false" data-role="button" data-icon="arrow-r">Right</a>
 						</ul>
 					</div>
-				</div><!-- /footer -->
+				</div>
 			</div>
-		</div><!-- /page -->
+		</div>
 
-		<!--vaccine-->
+
+
+
+
 		<div data-role="page" id = "#Pegvaccine">
+			
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">ආපසු</a>
 				<h1>m-Midwife</h1>
@@ -261,37 +262,22 @@
 							<a href="new-baby-stat.html" data-ajax="false"  data-theme="c" data-prefetch="true" data-transition="slidefade">New Born</a>
 						</li>
 					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /header -->
+				</div>
+			</div>
 
-			<div class="example-content">
-
-				<!-- Example scripts go here -->
-
-				<style type="text/css">
-					.note {
-						font-size: 0.8em;
-					}
-					.jqplot-yaxis-tick {
-						white-space: nowrap;
-					}
-				</style>
-
+			<div data-role="content">
 				<div id="PrenantVaccing" style="width:400px; height:300px;"></div>
-
+			</div>
+			<div data-role="footer" data-id="navfooter" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<a href="#Pegattendence" data-role="button" data-icon="arrow-l">Left</a>
+						<a href="#pegweight" data-role="button" data-icon="arrow-r">Right</a>
+					</ul>
+				</div>
 			</div>
 
-			<div >
-				<div data-role="footer" data-id="navfooter" data-position="fixed">
-					<div data-role="navbar">
-						<ul>
-							<a href="#Pegattendence" data-role="button" data-icon="arrow-l">Left</a>
-							<a href="#pegweight" data-role="button" data-icon="arrow-r">Right</a>
-						</ul>
-					</div>
-				</div><!-- /footer -->
-			</div>
-		</div><!-- /page -->
+		</div>
 	</body>
 </html>
 
