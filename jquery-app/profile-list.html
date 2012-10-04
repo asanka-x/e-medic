@@ -32,15 +32,25 @@
 					</li>
 				</ul>
 			</div><!-- /content -->
+
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="new-family.html" data-ajax="false" data-theme="c">New Family</a>
+							<a href="new-baby.html" data-ajax="false" data-theme="c">Baby</a>
+						</li>
+						<li>
+							<a href="new-pregnancy.html" data-ajax="false" data-theme="c">Pregnancy</a>
 						</li>
 					</ul>
 				</div><!-- /navbar -->
-
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="index.html" data-role="button" data-icon="plus">Add</a>
+						</li>
+					</ul>
+				</div><!-- /navbar -->
 			</div>
 		</div>
 
@@ -115,6 +125,7 @@
 				this.mdate = ko.observable();
 				this.bdate = ko.observable();
 				this.address = ko.observable();
+				this.image = ko.observable();
 
 				this.familyClicked = function(family) {
 					console.log(family.id);
@@ -124,6 +135,7 @@
 					self.mdate(family.mdate);
 					self.bdate(family.bdate);
 					self.bdate(family.address);
+					self.image(family.image);
 				};
 
 				/*
@@ -137,7 +149,8 @@
 					"husband" : "Saman",
 					"mdate" : "2012-02-03",
 					"bdate" : "1977-03-06",
-					"address" : "No 54/1, Wijerama, Colombo"
+					"address" : "No 54/1, Wijerama, Colombo",
+					"image" : "./styles/icon/links.png"
 				}, {
 					"id" : "02",
 					"family" : "Perera L.P.",
@@ -145,7 +158,8 @@
 					"husband" : "Mallika",
 					"mdate" : "Mallika",
 					"bdate" : "Mallika",
-					"address" : "No 54/6, Samagi road, Colombo"
+					"address" : "No 54/6, Samagi road, Colombo",
+					"image" : "./styles/icon/news.png"
 				}, {
 					"id" : "03",
 					"family" : "Ranaweera J.N.",
@@ -153,7 +167,8 @@
 					"husband" : "Mallika",
 					"mdate" : "Mallika",
 					"bdate" : "Mallika",
-					"address" : "No 54/9, Samagi road, Colombo"
+					"address" : "No 54/9, Samagi road, Colombo",
+					"image" : "./styles/icon/news.png"
 				}]
 			}
 
