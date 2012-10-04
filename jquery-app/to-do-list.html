@@ -76,7 +76,7 @@
 			}
 
 			function renderTodo(row) {
-				return "<li>" + row.todo + " [<a href='javascript:void(0);'  onclick='html5rocks.webdb.deleteTodo(" + row.ID + ");'>Delete</a>]</li>";
+				return "<li data-theme='a' data-role='listview' data-inset='true'>" + row.todo + " [<a href='javascript:void(0);' data-role='button' onclick='html5rocks.webdb.deleteTodo(" + row.ID + ");'>Delete</a>]</li>";
 			}
 
 			function init() {
@@ -104,7 +104,7 @@
 			<div data-role="content">
 				<input type="text" id="todo" name="todo" placeholder="What do you need to do?" style="width: 100%;" data-bind="value:todoItem"/>
 				<a data-bind="click:$root.addTask" data-role="button">Add</a>
-				<ul id="todoItems"></ul>
+				<ul id="todoItems" data-role="listview"></ul>
 				<div data-role="footer" data-position="fixed">
 					<center>
 						University of Peradeniya
