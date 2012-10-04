@@ -49,21 +49,45 @@
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-ajax="false" data-theme="c">Back</a>
 
-				<h1>e-medic</h1>
+				<h1>m-Midwife</h1>
 			</div><!-- /header -->
 
 			<div data-role="content" id="list-content">
 				<div class="ui-grid-a">
 					<div class="ui-block-a">
-					
+						<img src="./styles/icon/midwife.jpg" class="ui-li-icon" style="width:50%"/>
 					</div>
 					<div class="ui-block-b">
-				
+
+						<span data-bind="text: regNo"></span>
+						<br />
+						<br />
+						<span data-bind="text: wife"></span>
+						<br />
+						<br />
+						<span data-bind="text: husband"></span>
+						<br />
+						<br />
+						<span data-bind="text: mdate"></span>
+						<br />
+						<br />
 					</div>
 				</div>
 				<div class="ui-grid-solo">
 					<div class="ui-block-a">
-					
+						<span data-bind="text: bdate"></span>
+						<br />
+						<br />
+						<label for="address">ලිපිනය</label>
+						<br />
+						<br />
+						<label for="address">Pregnancies</label>
+						<br />
+						<br />
+						<label for="address">Children</label>
+						<br />
+						<br />
+						<label for="address">Location</label>
 					</div>
 				</div>
 			</div><!-- /content -->
@@ -85,9 +109,19 @@
 				var self = this;
 
 				this.familyProfile = ko.observableArray();
+				this.regNo = ko.observable("Reg No");
+				this.wife = ko.observable();
+				this.husband = ko.observable();
+				this.mdate = ko.observable();
+				this.bdate = ko.observable();
 
 				this.familyClicked = function(family) {
-					console.log(family);
+					console.log(family.id);
+					self.regNo(family.id);
+					self.wife(family.wife);
+					self.husband(family.husband);
+					self.mdate(family.mdate);
+					self.bdate(family.bdate);
 				};
 
 				/*
@@ -96,13 +130,25 @@
 				 */
 				this.familyProfile = [{
 					"id" : "01",
-					"family" : "Senawiratne K.K.P."
+					"family" : "Senawiratne K.K.P.",
+					"wife" : "Mallika",
+					"husband" : "Saman",
+					"mdate" : "2012-02-03",
+					"bdate" : "1977-03-06"
 				}, {
 					"id" : "02",
-					"family" : "Perera L.P."
+					"family" : "Perera L.P.",
+					"wife" : "Mallika",
+					"husband" : "Mallika",
+					"mdate" : "Mallika",
+					"bdate" : "Mallika"
 				}, {
 					"id" : "03",
-					"family" : "Ranaweera J.N."
+					"family" : "Ranaweera J.N.",
+					"wife" : "Mallika",
+					"husband" : "Mallika",
+					"mdate" : "Mallika",
+					"bdate" : "Mallika"
 				}]
 			}
 
