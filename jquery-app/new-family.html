@@ -107,7 +107,7 @@
 				this.familyClicked = function() {
 					//alert("sdad");
 					//db.insert('EligibleFamilyRegisterTb', { WifeName: self.wifeName, HusbundName: self.husbandName });
-					
+					console.log("Clicked");
 					var data = {
 						"wifeName" : self.wifeName,
 						"husbandName" : self.husbandName,
@@ -117,7 +117,7 @@
 					};
 
 					$.post("/src/DataAccess/dummyServer", data, function(returnedData) {
-						alert("SSSSS");
+					console.log("DONE");
 					});
 				};
 
