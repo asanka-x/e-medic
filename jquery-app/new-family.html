@@ -19,6 +19,7 @@
 		<script src="./libs/jquery.mobile.simpledialog.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jqm-datebox.mode.slidebox.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
 
 		<!--Sinhala convention -->
 		<script type="text/javascript" src="./libs/akuru/prefix.js"></script>
@@ -32,8 +33,8 @@
 		<script type='text/javascript'>
 			akuru.load('derana');
 			// akuru.load('paras');
-			akuru.load('arjun');
-			akuru.load('paras');
+			//akuru.load('arjun');
+			//akuru.load('paras');
 
 			// akuru.ready(function() {
 			// 	akuru.enable('#body', 'derana');
@@ -48,7 +49,7 @@
 				<a href="" data-rel="back" data-theme="c">ආපසු</a>
 
 				<h1>m-Midwife</h1>
-				
+
 				<a href="index.html" data-theme="c" data-icon="home">Home</a>
 			</div><!-- /header -->
 
@@ -58,41 +59,61 @@
 
 					<div data-role="fieldcontain">
 						<label for="wifeName">භර්යයාවගෙ නම</label>
-						<input type="text" name="wifeName" id="wifeName" value=""  />
+						<input type="text" name="wifeName" id="wifeName" data-bind="value:wifeName" />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="husbandName">ස්වාමි පුරුෂයාගේ නම</label>
-						<input type="text" name="husbandName" id="husbandName" value=""  />
+						<input type="text" name="husbandName" id="husbandName" data-bind="value:husbandName" />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="address">ලිපිනය</label>
-						<textarea cols="40" rows="8" name="address" id="address"></textarea>
+						<textarea cols="40" rows="8" name="address" id="address" data-bind="value:address"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="marriedAge">විවාහයේදී වයස</label>
-						<input type="text" name="marriedAge" id="marriedAge" value=""  />
+						<input type="text" name="marriedAge" id="marriedAge" data-bind="value:marriedAge" />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="dobOfWife">භර්යයාවගෙ උපන්දිනය</label>
-						<input name="dobOfWife" id="dobOfWife" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
+						<input name="dobOfWife" id="dobOfWife" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' data-bind="value:dobOfWife"/>
 					</div>
 
 					<div data-role="footer" data-position="fixed">
 						<div data-role="navbar">
 							<ul>
 								<li>
-									<a type="submit" href="new-pregnancy.html" data-ajax="false" data-theme="c">අතුලත් කරන්න</a>
+									<a data-role="button" data-theme="c" data-bind="click:$root.familyClicked">අතුලත් කරන්න</a>
 								</li>
 							</ul>
+							
 						</div><!-- /navbar -->
 					</div>
 				</form>
 			</div><!-- /page -->
 		</div>
+		<script type="text/javascript">
+			var ViewModel = function() {
+				var self=this;
+				this.wifeName = ko.observable("sdada");
+				this.husbandName = ko.observable("ewerwer");
+				this.marriedAge = ko.observable();
+				this.dobOfWife = ko.observable();
+				this.address = ko.observable();
+				
+				this.familyClicked = function() {
+					//alert("sdad");
+					//db.insert('EligibleFamilyRegisterTb', { WifeName: self.wifeName, HusbundName: self.husbandName });
+					alert("asdas");
+				};
+
+			};
+
+			ko.applyBindings(new ViewModel());
+		</script>
 	</body>
 </html>
 

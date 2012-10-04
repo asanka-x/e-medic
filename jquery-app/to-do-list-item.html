@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="quitbutton" content="visibility:visible;" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!--<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />-->
+		<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<!--<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/demos.css" rel="stylesheet" /> -->
+
+		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--script for map -->
+		<script type="text/javascript"
+		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC-ntKL4-x-zP6kTw9x7_wE0SpSaYEWXjY&sensor=false"></script>
+		<script type='text/javascript' src='http://akurulk.s3.amazonaws.com/akuru.min.js'></script>
+		<script type='text/javascript'>
+			akuru.load('arjun');
+			akuru.load('derana');
+		</script>
+		<script type="text/javascript">
+			var map = null;
+			var markers = [['Kamala Gunawardhane', 7.240194, 80.592527], ['Dilani Samarashinghe', 7.236214, 80.586948], ['Rasika Kumari', 7.237023, 80.590618], ['Amila Niroshini', 7.241365, 80.589137], ['Ruwani Bandara', 7.245814, 80.59021]]
+			/*var marker = new google.maps.Marker({
+			 position : new google.maps.LatLng(7.236214, 80.586948),
+			 icon : "footprint.png",
+			 map : map
+			 });
+			 var infowindow = new google.maps.InfoWindow({
+			 content : "කමලා ගුණවර්ධන"
+			 });*/
+			function initialize() {
+				var mapProp = {
+					center : new google.maps.LatLng(7.240194, 80.592527),
+					zoom : 15,
+					mapTypeId : google.maps.MapTypeId.ROADMAP
+				};
+				map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+				//----------
+				var infowindow = new google.maps.InfoWindow(), marker, i;
+				for ( i = 0; i < markers.length; i++) {
+					marker = new google.maps.Marker({
+						position : new google.maps.LatLng(markers[i][1], markers[i][2]),
+						icon : "footprint.png",
+						map : map
+					});
+					google.maps.event.addListener(marker, 'click', (function(marker, i) {
+						return function() {
+							infowindow.setContent(markers[i][0]);
+							infowindow.open(map, marker);
+						}
+					})(marker, i));
+				}
+
+				//marker.setMap(map);
+				//infowindow.open(map, marker);
+			};
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+
+	</head>
+	<body>
+		<div data-role="page">
+
+			<div data-role="header" data-position="fixed">
+				<a href="to-do-list.html" data-rel="back" data-theme="c">Back</a>
+				<h1>m-Midwife-Task</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<label for="Task">Task:</label>
+				<input type="text" name="Task" id="Task" value=""  />
+
+				<label for="Taskdate">Date:</label>
+				<input type="text" name="Taskdate" id="Taskdate " value=""  />
+
+				<label for="googleMap">Place:</label>
+				<div id="googleMap" style="width:500px;height:380px;"></div>
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="" data-ajax="false" data-theme="c">Done</a>
+						</li>
+						<li>
+							<a href="" data-ajax="false" data-theme="c">Erase</a>
+						</li>
+					</ul>
+				</div><!-- /navbar -->
+			</div>
+		</div>
+
+	</body>
+</html>
