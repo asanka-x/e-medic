@@ -23,23 +23,19 @@
 		<div data-role="page">
 
 			<div data-role="header" data-position="fixed">
+				<a href="" data-rel="back" data-theme="c">ආපසු</a>
 				<h1>e-medic</h1>
 			</div><!-- /header -->
 
 			<div data-role="content">
-				<form data-bind="submit: addTask">
-					Add task:
-					<input data-bind="value: newTaskText" placeholder="What needs to be done?" />
-					<button type="submit">
-						Add
-					</button>
-				</form>
 
-				<ul data-role="listview" data-bind="foreach: tasks, visible: tasks().length > 0">
+				<input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+				<a data-bind="click:$root.addTask" data-role="button">Add</a>
+
+				<ul data-bind="foreach: tasks, visible: tasks().length > 0">
 					<li>
 						<input type="checkbox" data-bind="checked: isDone" />
-						<label><input type="checkbox" name="checkbox-0" /> I agree </label>
-						<input data-bind="value: title, disable: isDone" />
+						<input type="text" data-bind="value: title, disable: isDone" />
 						<a href="#" data-bind="click: $parent.removeTask">Delete</a>
 					</li>
 				</ul>
@@ -54,7 +50,7 @@
 		</div><!-- /page -->
 		<script type="text/javascript">
 			function Task(data) {
-				this.title = ko.observsssable(data.title);
+				this.title = ko.observable(data.title);
 				this.isDone = ko.observable(data.isDone);
 			}
 
