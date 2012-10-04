@@ -23,9 +23,10 @@
 		<script type="text/javascript" src="./libs/akuru/vendors/htmlparser.js"></script>
 		<script type="text/javascript" src="./libs/akuru/akuru.js"></script>
 		<script type="text/javascript" src="./libs/akuru/loader.js"></script>
+		<!--<script src="./src/DataAccess/dbaccess.js" type="text/javascript"></script>-->
 
 		<script type='text/javascript'>
-			//akuru.load('derana');
+			akuru.load('derana');
 			// akuru.load('paras');
 			//akuru.load('arjun');
 			//akuru.load('paras');
@@ -45,6 +46,7 @@
 			</div><!-- /header -->
 
 			<div data-role="content">
+				<div id="results"></div>
 				<center>
 					<img src="./styles/icon/midwife.jpg" class="ui-li-icon"/>
 				</center>
@@ -59,7 +61,7 @@
 						<a href="" data-transition="slide"><img src="./styles/icon/events.png" class="ui-li-icon" alt="Schedules"/> කාල සටහන </a>
 					</li>
 					<li data-theme="a">
-						<a href="" data-transition="slide"><img src="./styles/icon/events.png" class="ui-li-icon" alt="Schedules"/> Statistic</a>
+						<a href="" data-transition="slide"><img src="./styles/icon/events.png" class="ui-li-icon" alt="Statistics"/> විශ්ලේශන</a>
 					</li>
 					<li data-theme="a">
 						<a href="map.html" data-transition="slide" data-ajax="false"><img src="./styles/icon/maps.png" class="ui-li-icon" alt="Maps" /> සිතියම </a>
@@ -72,6 +74,27 @@
 				</center>
 			</div>
 		</div><!-- /page -->
+		<script type="text/javascript" charset="utf-8">
+		/*
+			function pass(results, query) {
+				var target = document.getElementById('results'), html = target.innerHTML;
+				target.innerHTML = html + 'pass - ' + query + '<br />';
+			}
+
+			function fail(error, query) {
+				var target = document.getElementById('results'), html = target.innerHTML;
+				target.innerHTML = html + 'fail - ' + error.message + ': ' + query + '<br />';
+			}
+
+			var db = SQLite({
+				shortName : 'mydb',
+				defaultErrorHandler : fail,
+				defaultDataHandler : pass
+			});
+
+			db.init();
+			*/
+		</script>
 	</body>
 </html>
 
