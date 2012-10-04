@@ -19,114 +19,85 @@
 		<script src="./libs/jquery.mobile.simpledialog.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jqm-datebox.mode.slidebox.min.js" type="text/javascript" charset="utf-8"></script>
+		
+				<!--Sinhala convention -->
+		<script type="text/javascript" src="./libs/akuru/prefix.js"></script>
+		<script type="text/javascript" src="./libs/akuru/unicodeSinhala.js"></script>
+		<script type="text/javascript" src="./libs/akuru/tokenizer.js"></script>
+		<script type="text/javascript" src="./libs/akuru/converters/legacyConverter.js"></script>
+		<script type="text/javascript" src="./libs/akuru/vendors/htmlparser.js"></script>
+		<script type="text/javascript" src="./libs/akuru/akuru.js"></script>
+		<script type="text/javascript" src="./libs/akuru/loader.js"></script>
+
+		<script type='text/javascript'>
+			akuru.load('derana');
+			// akuru.load('paras');
+			akuru.load('arjun');
+			akuru.load('paras');
+
+			// akuru.ready(function() {
+			// 	akuru.enable('#body', 'derana');
+			// });
+		</script>
 
 	</head>
 
 	<body>
-		<div data-role="page">
+		<div data-role="page" class='paras'>
 
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">Back</a>
-
-				<h1>e-medic</h1>
+				<h1>m-Midwife</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
 			</div><!-- /header -->
 
 			<div data-role="content">
-				<!--<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="textinput1" class="ui-input-text" style="vertical-align: middle;"> NAME </label>
-				<input name="name" id="textinput1" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="selectmenu1" style="vertical-align: middle;"> SEX </label>
-				<select name="">
-				<option value=""> Select </option>
-				<option value="male"> Male </option>
-				<option value="female"> Female </option>
-				</select>
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="mydate" style="vertical-align: middle;">DATE OF BIRTH</label>
-
-				<input name="dateOfBirth" id="dateOfBirth" type="date" data-role="datebox"
-				data-options='{"mode": "calbox", "calWeekMode": true, "calWeekModeFirstDay": 1}'>
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="textinput3" style="vertical-align: middle;"> BIRTH WEIGHT </label>
-				<input name="birthWeight" id="textinput3" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="textinput4" > CRITICAL STATUS </label>
-				<input name="criticalStatus" id="criticalStatus" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				</div><!-- /content -->
 				<form action="#" method="get">
 
 					<div data-role="fieldcontain">
-						<label for="name">NAME</label>
+						<label for="name">නම</label>
 						<input type="text" name="name" placeholder="Enter Here"  id="name" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup">
 							<legend>
-								SEX
+								ස්ත්‍රී පුරුෂ භාවය
 							</legend>
 							<input type="radio" name="radio-choice-1" id="radio-choice-1" data-theme="a" value="choice-1" checked="checked" />
-							<label for="radio-choice-1">Male</label>
+							<label for="radio-choice-1">පුරුෂ</label>
 
 							<input type="radio" name="radio-choice-1" id="radio-choice-2" data-theme="a" value="choice-2"  />
-							<label for="radio-choice-2">Female</label>
+							<label for="radio-choice-2">ස්ත්‍රී</label>
 
 						</fieldset>
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="dob">DATE OF BIRTH</label>
+						<label for="dob">උපන් දිනය</label>
 						<input name="dob" id="dob" type="text" placeholder="Select Date" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="weight">BIRTH WEIGHT</label>
+						<label for="weight">උපත් බර</label>
 						<input type="text" name="weight" placeholder="Enter Here"  id="weight" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="critical">CRITICAL STATUS</label>
+						<label for="critical">අවදානම් ත්ත්වය</label>
 						<input type="text" name="critical" placeholder="Enter Here"  id="critical" value=""  />
 					</div>
 
-					<div data-role="fieldcontain">
-						<fieldset class="ui-grid-a">
-							<div class="ui-block-a">
-								<button type="submit" data-theme="a">
-									Cancel
-								</button>
-							</div>
-							<div class="ui-block-b">
-								<button type="submit" data-theme="c">
-									Submit
-								</button>
-							</div>
-						</fieldset>
+					<div data-role="footer" data-position="fixed">
+						<div data-role="navbar">
+							<ul>
+								<li>
+									<a type="submit" href="new-pregnancy.html" data-ajax="false" data-theme="c">New Pregnancy</a>
+								</li>
+							</ul>
+						</div><!-- /navbar -->
 					</div>
 				</form>
-
-				<div data-role="footer" data-position="fixed">
-					<center>
-						University of Peradeniya
-					</center>
-				</div>
-
 			</div><!-- /page -->
 	</body>
 </html>

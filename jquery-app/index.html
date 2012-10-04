@@ -4,46 +4,69 @@
 		<meta charset="utf-8">
 		<meta http-equiv="quitbutton" content="visibility:visible;" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
 		<!--<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />-->
 		<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
-		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" /> 
-		<!--<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" /> 
-		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" /> 
+		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<!--<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" />
 		<link type="text/css" href="./styles/demos.css" rel="stylesheet" /> -->
-		
+
 		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--Sinhala convention -->
+		<script type="text/javascript" src="./libs/akuru/prefix.js"></script>
+		<script type="text/javascript" src="./libs/akuru/unicodeSinhala.js"></script>
+		<script type="text/javascript" src="./libs/akuru/tokenizer.js"></script>
+		<script type="text/javascript" src="./libs/akuru/converters/legacyConverter.js"></script>
+		<script type="text/javascript" src="./libs/akuru/vendors/htmlparser.js"></script>
+		<script type="text/javascript" src="./libs/akuru/akuru.js"></script>
+		<script type="text/javascript" src="./libs/akuru/loader.js"></script>
+
+		<script type='text/javascript'>
+			akuru.load('derana');
+			// akuru.load('paras');
+			akuru.load('arjun');
+			akuru.load('paras');
+
+			// akuru.ready(function() {
+			// 	akuru.enable('#body', 'derana');
+			// });
+		</script>
+
 	</head>
 
 	<body>
-		<div data-role="page">
+		<div data-role="page" class='paras'>
 
 			<div data-role="header" data-position="fixed">
-				<h1>e-medic</h1>
+				<h1>m-Midwife</h1>
 			</div><!-- /header -->
 
 			<div data-role="content">
 				<center>
-				<img src="./styles/icon/midwife.jpg" class="ui-li-icon"/>
+					<img src="./styles/icon/midwife.jpg" class="ui-li-icon"/>
 				</center>
 				<ul data-role="listview" data-inset="true" >
 					<li data-theme="a">
-						<a href=""><img src="./styles/icon/links.png" class="ui-li-icon" alt="Notifications"/> Notifications </a>
+						<a href="to-do-list.html"><img src="./styles/icon/links.png" class="ui-li-icon" alt="Notifications"/> වැඩ ලැයිස්තුව </a>
 					</li>
 					<li data-theme="a">
-						<a href="profile-list.html" data-transition="slide" data-ajax="false"><img src="./styles/icon/news.png"  class="ui-li-icon" alt="Profiles" /> Profiles </a>
+						<a href="profile-list.html" data-transition="slide" data-ajax="false"><img src="./styles/icon/news.png"  class="ui-li-icon" alt="Profiles" /> පවුල් ගොනුව </a>
 					</li>
 					<li data-theme="a">
-						<a href="" data-transition="slide"><img src="./styles/icon/events.png" class="ui-li-icon" alt="Schedules"/> Schedules </a>
+						<a href="" data-transition="slide"><img src="./styles/icon/events.png" class="ui-li-icon" alt="Schedules"/> කාල සටහන </a>
 					</li>
 					<li data-theme="a">
-						<a href="map.html" data-transition="slide" data-ajax="false"><img src="./styles/icon/maps.png" class="ui-li-icon" alt="Maps" /> Maps </a>
+						<a href="map.html" data-transition="slide" data-ajax="false"><img src="./styles/icon/maps.png" class="ui-li-icon" alt="Maps" /> සිතියම </a>
 					</li>
 				</ul>
 			</div><!-- /content -->
 			<div data-role="footer" data-position="fixed">
-				<center>University of Peradeniya</center>
+				<center>
+					University of Peradeniya
+				</center>
 			</div>
 		</div><!-- /page -->
 	</body>

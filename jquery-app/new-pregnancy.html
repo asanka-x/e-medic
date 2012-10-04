@@ -4,12 +4,19 @@
 		<meta charset="utf-8">
 		<meta http-equiv="quitbutton" content="visibility:visible;" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />-->
 		<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
 		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/demos.css" rel="stylesheet" />
 
 		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="./libs/jqm-datebox.core.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile.simpledialog.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jqm-datebox.mode.slidebox.min.js" type="text/javascript" charset="utf-8"></script>
 
 	</head>
 
@@ -18,217 +25,102 @@
 
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">Back</a>
-
-				<h1>e-medic</h1>
+				<h1>m-Midwife</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
 			</div><!-- /header -->
 
 			<div data-role="content">
-				<!--<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="name"> NAME </label>
-				<input name="name" id="name" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="address"> ADDRESS </label>
-				<input name="address" id="address" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="age"> AGE </label>
-				<input name="age" id="age" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="residentialStatus"> RESIDENTIAL STATUS </label>
-				<input name="residentialStatus" id="residentialStatus" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="tetunasStatus"> TETUNAS STATUS </label>
-				<input name="tetunasStatus" id="tetunasStatus" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="rubellaStatus"> RUBELLA STATUS </label>
-				<input name="rubellaStatus" id="rubellaStatus" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="booldTestStatus"> BLOOD TEST STATUS </label>
-				<input name="booldTestStatus" id="booldTestStatus" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="bmiFirstCome"> BMI FIRST COME </label>
-				<input name="bmiFirstCome" id="bmiFirstCome" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="vdrlTest"> VDRL TEST </label>
-				<input name="vdrlTest" id="vdrlTest" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="numberOfPregnancy"> NUMBER OF PREGNANCY </label>
-				<input name="numberOfPregnancy" id="numberOfPregnancy" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="lastPregnancyResult"> LAST PREGNANCY RESULT </label>
-				<input name="lastPregnancyResult" id="lastPregnancyResult" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="numberOfWeeksPregnancy"> NUMBER OF WEEKS PREGNANCY </label>
-				<input name="numberOfWeeksPregnancy" id="numberOfWeeksPregnancy" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="criticalStatus"> CRITICAL STATUS </label>
-				<input name="criticalStatus" id="criticalStatus" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="expectDate"> EXPECT DATE </label>
-				<input name="expectDate" id="expectDate" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="riskFactors"> RISK FACTORS </label>
-				<input name="riskFactors" id="riskFactors" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="firstComeWeeks"> FIRST COME WEEKS </label>
-				<input name="firstComeWeeks" id="firstComeWeeks" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
-				<label for="deliveryDate"> DELIVERY DATE </label>
-				<input name="deliveryDate" id="deliveryDate" placeholder="Enter Here" value="" type="text" />
-				</fieldset>
-				</div>
-				<a id="buttonAdd" data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="plus" data-iconpos="left"> ADD FAMILY </a>
-
-				</div>--><!-- /content -->
 
 				<form action="#" method="get">
 
 					<div data-role="fieldcontain">
 						<label for="name">NAME</label>
-						<input type="text" name="name" placeholder="Enter Here"  id="name" value=""  />
+						<input type="text" name="name" id="name" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="address">ADDRESS</label>
-						<textarea cols="40" rows="8" placeholder="Enter Here" name="address" id="address"></textarea>
+						<textarea cols="40" rows="8" name="address" id="address"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="age">AGE</label>
-						<input type="text" name="age" id="age" placeholder="Enter Here"  value=""  />
+						<input type="text" name="age" id="age" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="recidence">RECIDENTIAL STATUS</label>
-						<textarea cols="40" rows="8" placeholder="Enter Here" name="recidence" id="recidence"></textarea>
+						<textarea cols="40" rows="8" name="recidence" id="recidence"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="tetunas">TETUNAS STATUS</label>
-						<textarea cols="40" rows="8" placeholder="Enter Here" name="tetunas" id="tetunas"></textarea>
+						<textarea cols="40" rows="8" name="tetunas" id="tetunas"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="rubella">RUBELLA STATUS</label>
-						<textarea cols="40" rows="8" placeholder="Enter Here" name="rubella" id="rubella"></textarea>
+						<textarea cols="40" rows="8" name="rubella" id="rubella"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="bloodTest">BLOOD TEST STATUS</label>
-						<textarea cols="40" rows="8" placeholder="Enter Here" name="bloodTest" id="bloodTest"></textarea>
+						<textarea cols="40" rows="8" name="bloodTest" id="bloodTest"></textarea>
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="bmi">BMI FIRST COME</label>
-						<input type="text" name="bmi" placeholder="Enter Here"  id="bmi" value=""  />
+						<input type="text" name="bmi"  id="bmi" value=""  />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="vdrlTest"> VDRL TEST </label>
-						<input type="text"  name="vdrlTest" id="vdrlTest" placeholder="Enter Here" value="" />
+						<input type="text"  name="vdrlTest" id="vdrlTest" value="" />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="numberOfPregnancy"> NUMBER OF PREGNANCIES </label>
-						<input name="numberOfPregnancy" id="numberOfPregnancy" placeholder="Enter Here" value="" type="text" />
+						<input name="numberOfPregnancy" id="numberOfPregnancy" value="" type="text" />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="criticalStatus"> CRITICAL STATUS </label>
-						<input name="criticalStatus" id="criticalStatus" placeholder="Enter Here" value="" type="text" />
+						<input name="criticalStatus" id="criticalStatus" value="" type="text" />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="expectDate"> EXPECT DATE </label>
-						<input name="expectDate" id="expectDate" placeholder="Enter Here" value="" type="text" />
+						<label for="expectDate">EXPECT DATE</label>
+						<input name="expectDate" id="expectDate" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="riskFactors"> RISK FACTORS </label>
-						<input name="riskFactors" id="riskFactors" placeholder="Enter Here" value="" type="text" />
+						<label for="riskFactors">RISK FACTORS</label>
+						<input name="riskFactors" id="riskFactors" value="" type="text" />
 					</div>
 
 					<div data-role="fieldcontain">
-						<label for="firstComeWeeks"> FIRST COME WEEKS </label>
-						<input name="firstComeWeeks" id="firstComeWeeks" placeholder="Enter Here" value="" type="text" />
+						<label for="firstComeWeeks">FIRST COME WEEKS</label>
+						<input name="firstComeWeeks" id="firstComeWeeks" value="" type="text" />
 					</div>
 
 					<div data-role="fieldcontain">
 						<label for="deliveryDate"> DELIVERY DATE </label>
-						<input name="deliveryDate" id="deliveryDate" placeholder="Enter Here" value="" type="text" />
+						<input name="deliveryDate" id="deliveryDate" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
 					</div>
 
-					<div data-role="fieldcontain">
-						<fieldset class="ui-grid-a">
-							<div class="ui-block-a">
-								<button type="submit" data-theme="a">
-									Cancel
-								</button>
-							</div>
-							<div class="ui-block-b">
-								<button type="submit" data-theme="c">
-									Submit
-								</button>
-							</div>
-						</fieldset>
+					<div data-role="footer" data-position="fixed">
+						<div data-role="navbar">
+							<ul>
+								<li>
+									<a type="submit" href="new-pregnancy.html" data-ajax="false" data-theme="c">Submit</a>
+								</li>
+							</ul>
+						</div><!-- /navbar -->
 					</div>
-				</form>
+			</div>
+			</form>
+		</div><!-- /page -->
 
-				<div data-role="footer" data-position="fixed">
-					<center>
-						University of Peradeniya
-					</center>
-				</div>
-
-			</div><!-- /page -->
 	</body>
 </html>
 
