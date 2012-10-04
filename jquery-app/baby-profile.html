@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="quitbutton" content="visibility:visible;" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!--<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />-->
+		<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.simpledialog.min.css" />
+		<!--<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/demos.css" rel="stylesheet" /> -->
+
+		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile.simpledialog2.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div data-role="page">
+
+			<div data-role="header" data-position="fixed">
+				<a href="" data-rel="back" data-theme="c">ආපසු</a>
+				<h1>m-Midwife</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<div id="ProfilePage" class="ui-grid-a">
+					<div class="ui-block-a" >
+						<img class="ui-block-b"  style="border-radius: 0.6em; border: 3px solid #9A0000" id="Photo" src="./styles/icon/midwife.jpg" class="ui-li-icon" />
+					</div>
+					<div class="ui-block-b">
+						<strong for="name">Personal Information</strong>
+						<div id="Infomation" name="Infomation" style="border-radius: 0.6em; padding-left: 5px; border: 3px solid #9A0000">
+							<p>
+								<strong for="name">Name:</strong>
+								<span id="name" name="name">Sameera Perera</span>
+							</p>
+							<p>
+								<strong for="age">Age:</strong>
+								<span name="age" id="age">25</span>
+							</p>
+							<p>
+								<strong for="guardian">Guardian Name:</strong>
+								<span name="guardian" id="guardian">Sameera Perera</span>
+							</p>
+
+							<script type="text/javascript">
+								$(document).delegate('#opendialog', 'click', function() {
+									// NOTE: The selector is the hidden DIV element.
+									$('#inlinecontent').simpledialog2();
+								})
+							</script>
+							<a href="#" id="opendialog" data-theme="a" data-role="button">Contact Guardian</a>
+
+							<!--NOTE: blankContent is set to TRUE, and the content goes IN the div. -->
+							<div id="inlinecontent" style="display:none" data-theme="a"
+							data-options='{"mode":"blank","headerText":"Contact","headerClose":true,"blankContent":true}'>
+								<a rel='close' data-theme="a" data-role='button' href='#'>Call</a>
+								<a rel='close' data-theme="a" data-role='button' href='#'>SMS</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<strong for="name">Averall Status</strong>
+				<div id="averallStatus" name="averallStatus">
+					<textarea id="status" readonly="true" name="name">Sameera Perera</textarea>																														
+					
+
+				</div>
+
+				<!-- Needed because other elements inside ProfilePage have floats -->
+
+				<!--<div class="ui-grid-a">
+				<img class="ui-block-a" width="0.1%" height="0.1%" src="./styles/icon/midwife.jpg" style="border:2px groove #9A0000;"/>
+				<label class="ui-block-b" name="name"> Sameera Mdusanka</label>
+				<label class="ui-block-b" name="age">Age: 25</label>
+				<label class="ui-block-b" name="name"> Weght : 57kg</label>
+				<label class="ui-block-b" name="name"> Heght : 5feet and 8"</label>
+				</div>-->
+
+			</div><!-- /content -->
+			<div data-role="footer" data-id="foo1" data-position="fixed">
+				<script type="type="text/css"">
+					.
+					ui - header.ui - btn - inner,  .ui - footer.ui - btn - inner,  .ui - mini.ui - btn - inner {
+						font-size: 5px;
+					}
+				</script>
+				<div data-role="navbar" id="footerbuttons">
+					<ul>
+						<li>
+							<a href="#" data-theme="c">Growth Chart</a>
+						</li>
+						<li>
+							<a href="#" data-theme="c">Vaccine Data</a>
+						</li>
+						<li>
+							<a href="#" data-theme="c">Notification</a>
+						</li>
+						<li>
+							<a href="#" data-theme="c">Child Growth Data</a>
+						</li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+	</body>
+</html>
+
