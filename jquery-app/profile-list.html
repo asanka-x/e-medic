@@ -78,7 +78,7 @@
 						<span data-bind="text: bdate"></span>
 						<br />
 						<br />
-						<label for="address">ලිපිනය</label>
+						<span data-bind="text: address"></span>
 						<br />
 						<br />
 						<label for="address">Pregnancies</label>
@@ -114,6 +114,7 @@
 				this.husband = ko.observable();
 				this.mdate = ko.observable();
 				this.bdate = ko.observable();
+				this.address = ko.observable();
 
 				this.familyClicked = function(family) {
 					console.log(family.id);
@@ -122,6 +123,7 @@
 					self.husband(family.husband);
 					self.mdate(family.mdate);
 					self.bdate(family.bdate);
+					self.bdate(family.address);
 				};
 
 				/*
@@ -134,21 +136,24 @@
 					"wife" : "Mallika",
 					"husband" : "Saman",
 					"mdate" : "2012-02-03",
-					"bdate" : "1977-03-06"
+					"bdate" : "1977-03-06",
+					"address" : "No 54/1, Wijerama, Colombo"
 				}, {
 					"id" : "02",
 					"family" : "Perera L.P.",
 					"wife" : "Mallika",
 					"husband" : "Mallika",
 					"mdate" : "Mallika",
-					"bdate" : "Mallika"
+					"bdate" : "Mallika",
+					"address" : "No 54/6, Samagi road, Colombo"
 				}, {
 					"id" : "03",
 					"family" : "Ranaweera J.N.",
 					"wife" : "Mallika",
 					"husband" : "Mallika",
 					"mdate" : "Mallika",
-					"bdate" : "Mallika"
+					"bdate" : "Mallika",
+					"address" : "No 54/9, Samagi road, Colombo"
 				}]
 			}
 
