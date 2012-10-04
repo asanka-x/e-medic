@@ -89,7 +89,7 @@
 									<a data-role="button" data-theme="c" data-bind="click:$root.familyClicked">අතුලත් කරන්න</a>
 								</li>
 							</ul>
-							
+
 						</div><!-- /navbar -->
 					</div>
 				</form>
@@ -97,17 +97,28 @@
 		</div>
 		<script type="text/javascript">
 			var ViewModel = function() {
-				var self=this;
-				this.wifeName = ko.observable("sdada");
-				this.husbandName = ko.observable("ewerwer");
+				var self = this;
+				this.wifeName = ko.observable();
+				this.husbandName = ko.observable();
 				this.marriedAge = ko.observable();
 				this.dobOfWife = ko.observable();
 				this.address = ko.observable();
-				
+
 				this.familyClicked = function() {
 					//alert("sdad");
 					//db.insert('EligibleFamilyRegisterTb', { WifeName: self.wifeName, HusbundName: self.husbandName });
-					alert("asdas");
+					console.log("Clicked");
+					var data = {
+						"wifeName" : self.wifeName,
+						"husbandName" : self.husbandName,
+						"marriedAge" : self.marriedAge,
+						"dobOfWife" : self.dobOfWife,
+						"address" : self.address
+					};
+
+					$.post("/src/DataAccess/dummyServer", data, function(returnedData) {
+					console.log("DONE");
+					});
 				};
 
 			};

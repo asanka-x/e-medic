@@ -17,70 +17,112 @@
 		<script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
 		<!--<script src="./src/bindings/to-do-list.js" type="text/javascript" charset="utf-8"></script>-->
 
+		<script>
+			var html5rocks = {};
+			html5rocks.webdb = {};
+			html5rocks.webdb.db = null;
 
+			html5rocks.webdb.open = function() {
+				var dbSize = 5 * 1024 * 1024;
+				// 5MB
+				html5rocks.webdb.db = openDatabase("Todo", "1.0", "Todo manager", dbSize);
+			}
+
+			html5rocks.webdb.createTable = function() {
+				var db = html5rocks.webdb.db;
+				db.transaction(function(tx) {
+					tx.executeSql("CREATE TABLE IF NOT EXISTS todo(ID INTEGER PRIMARY KEY ASC, todo TEXT, added_on DATETIME)", []);
+				});
+			}
+
+			html5rocks.webdb.addTodo = function(todoText) {
+				var db = html5rocks.webdb.db;
+				db.transaction(function(tx) {
+					var addedOn = new Date();
+					tx.executeSql("INSERT INTO todo(todo, added_on) VALUES (?,?)", [todoText, addedOn], html5rocks.webdb.onSuccess, html5rocks.webdb.onError);
+				});
+			}
+
+			html5rocks.webdb.onError = function(tx, e) {
+				alert("There has been an error: " + e.message);
+			}
+
+			html5rocks.webdb.onSuccess = function(tx, r) {
+				// re-render the data.
+				html5rocks.webdb.getAllTodoItems(loadTodoItems);
+			}
+
+			html5rocks.webdb.getAllTodoItems = function(renderFunc) {
+				var db = html5rocks.webdb.db;
+				db.transaction(function(tx) {
+					tx.executeSql("SELECT * FROM todo", [], renderFunc, html5rocks.webdb.onError);
+				});
+			}
+
+			html5rocks.webdb.deleteTodo = function(id) {
+				var db = html5rocks.webdb.db;
+				db.transaction(function(tx) {
+					tx.executeSql("DELETE FROM todo WHERE ID=?", [id], html5rocks.webdb.onSuccess, html5rocks.webdb.onError);
+				});
+			}
+			function loadTodoItems(tx, rs) {
+				var rowOutput = "";
+				var todoItems = document.getElementById("todoItems");
+				for (var i = 0; i < rs.rows.length; i++) {
+					rowOutput += renderTodo(rs.rows.item(i));
+				}
+
+				todoItems.innerHTML = rowOutput;
+			}
+
+			function renderTodo(row) {
+				return "<li>" + row.todo + " [<a href='javascript:void(0);'  onclick='html5rocks.webdb.deleteTodo(" + row.ID + ");'>Delete</a>]</li>";
+			}
+
+			function init() {
+				html5rocks.webdb.open();
+				html5rocks.webdb.createTable();
+				html5rocks.webdb.getAllTodoItems(loadTodoItems);
+			}
+
+			function addTodo() {
+				var todo = document.getElementById("todo");
+				html5rocks.webdb.addTodo(todo.value);
+				todo.value = "";
+			}
+		</script>
 	</head>
 
-	<body>
+	<body onload="init();">
 		<div data-role="page">
 
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">ආපසු</a>
 				<h1>e-medic</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
 			</div><!-- /header -->
 
 			<div data-role="content">
-
-				<input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+				<input type="text" id="todo" name="todo" placeholder="What do you need to do?" style="width: 100%;" data-bind="value:todoItem"/>
 				<a data-bind="click:$root.addTask" data-role="button">Add</a>
-
-				<ul data-bind="foreach: tasks, visible: tasks().length > 0">
-					<li>
-						<input type="checkbox" data-bind="checked: isDone" />
-						<input type="text" data-bind="value: title, disable: isDone" />
-						<a href="#" data-bind="click: $parent.removeTask">Delete</a>
-					</li>
-				</ul>
-
-				You have <b data-bind="text: incompleteTasks().length">&nbsp;</b> incomplete task(s) <span data-bind="visible: incompleteTasks().length == 0"> - it's beer time!</span>
-			</div><!-- /content -->
-			<div data-role="footer" data-position="fixed">
-				<center>
-					University of Peradeniya
-				</center>
-			</div>
-		</div><!-- /page -->
-		<script type="text/javascript">
-			function Task(data) {
-				this.title = ko.observable(data.title);
-				this.isDone = ko.observable(data.isDone);
-			}
-
-			function TaskListViewModel() {
-				// Data
-				var self = this;
-				self.tasks = ko.observableArray([]);
-				self.newTaskText = ko.observable();
-				self.incompleteTasks = ko.computed(function() {
-					return ko.utils.arrayFilter(self.tasks(), function(task) {
-						return !task.isDone()
-					});
-				});
-
-				// Operations
-				self.addTask = function() {
-					self.tasks.push(new Task({
-						title : this.newTaskText()
-					}));
-					self.newTaskText("");
-				};
-				self.removeTask = function(task) {
-					self.tasks.remove(task)
-				};
-			}
-
-
-			ko.applyBindings(new TaskListViewModel());
-		</script>
+				<ul id="todoItems"></ul>
+				<div data-role="footer" data-position="fixed">
+					<center>
+						University of Peradeniya
+					</center>
+				</div>
+			</div><!-- /page -->
+			<script type="text/javascript">
+				function TaskListViewModel() {
+					var self = this;
+					this.todoItem = ko.observable();
+					this.addTask = function() {
+						html5rocks.webdb.addTodo(self.todoItem());
+						self.todoItem('');
+					};
+				}
+				ko.applyBindings(new TaskListViewModel());
+			</script>
 	</body>
 </html>
 

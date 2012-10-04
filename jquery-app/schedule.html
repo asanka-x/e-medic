@@ -1,76 +1,97 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title></title>
-</head>
+
+	<link rel="stylesheet" href="./styles/style.css?v=3.5" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
+	<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
 	<script src="./libs/dhtmlxscheduler.js?v=3.5" type="text/javascript" charset="utf-8"></script>
 	<script src="./libs/dhtmlxscheduler_dhx_terrace.js?v=3.5" type="text/javascript" charset="utf-8"></script>
 	<script src="./libs/dhtmlxscheduler_year_view.js?v=3.5" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" href="./styles/style.css?v=3.5" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
 
-	
+	<title></title>
+</head>
+
 <style type="text/css" media="screen">
-	html, body{
-		margin:0px;
-		padding:0px;
-		height:100%;
-		overflow:hidden;
-	}	
-	.dhx_cal_event_line.custom, .dhx_cal_event.custom div{
-		background-color:#fd7;
-		border-color:#da6;
-		color:#444;
+	html, body {
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		overflow: hidden;
+	}
+	.dhx_cal_event_line.custom, .dhx_cal_event.custom div {
+		background-color: #fd7;
+		border-color: #da6;
+		color: #444;
 	}
 </style>
 
 <script type="text/javascript" charset="utf-8">
 	function init() {
-		window.resizeTo(850,600)
+		window.resizeTo(850, 600)
 		modSchedHeight();
-		scheduler.config.xml_date="%Y-%m-%d %H:%i";
+		scheduler.config.xml_date = "%Y-%m-%d %H:%i";
 		scheduler.config.first_hour = 8;
 		scheduler.config.multi_day = true;
 		scheduler.config.date_step = "5"
 		scheduler.init('scheduler_here', new Date(2012, 07, 22));
-		scheduler.templates.event_class=function(s,e,ev){ return ev.custom?"custom":""; };
+		scheduler.templates.event_class = function(s, e, ev) {
+			return ev.custom ? "custom" : "";
+		};
 		scheduler.load("./xml/events.xml?v=35");
 	}
 </script>
 
 <body onload="init();" onresize="modSchedHeight()">
-	
+	<div data-role="page" class='paras'>
+		<div data-role="header" data-position="fixed">
+			<a href="" data-rel="back" data-theme="c">Back</a>
+			<h1>m-Midwife</h1>
+			<a href="index.html" data-theme="c" data-icon="home">Home</a>
+		</div><!-- /header -->
+		<div data-role="content">
 
-	<script>
-		function modSchedHeight(){
-			var headHeight = 100;
-			var sch = document.getElementById("scheduler_here");
-			sch.style.height = (parseInt(document.body.offsetHeight)-headHeight)+"px";
-			var contbox = document.getElementById("contbox");
-			contbox.style.width = (parseInt(document.body.offsetWidth)-300)+"px";
-		}
-	</script>
+			<script>
+				function modSchedHeight() {
+					var headHeight = 100;
+					var sch = document.getElementById("scheduler_here");
+					sch.style.height = (parseInt(document.body.offsetHeight) - headHeight) + "px";
+					var contbox = document.getElementById("contbox");
+					contbox.style.width = (parseInt(document.body.offsetWidth) - 300) + "px";
+				}
+			</script>
 
-		
-		<div id="contbox" style="float:left;color:white;margin:22px 75px 0 75px; overflow:hidden;font: 17px Arial,Helvetica;color:white">
-			
+			<div id="contbox" style="float:left;color:#f4eed2;margin:10px 50px 0 75px; overflow:hidden;font: 17px Arial,Helvetica;color:#f4eed2">
+
+			</div>
+
+			<!-- end. info block -->
+
+			<div id="scheduler_here" class="dhx_cal_container" style='width:100%;height:100%;color:#f4eed2'>
+				<div class="dhx_cal_navline">
+					<div class="dhx_cal_prev_button">
+						&nbsp;
+					</div>
+					<div class="dhx_cal_next_button">
+						&nbsp;
+					</div>
+					<div class="dhx_cal_today_button"></div>
+					<div class="dhx_cal_date"></div>
+					<div class="dhx_cal_tab" name="day_tab" style="right:332px;"></div>
+					<div class="dhx_cal_tab" name="week_tab" style="right:268px;"></div>
+					<div class="dhx_cal_tab" name="month_tab" style="right:204px;"></div>
+					<div class="dhx_cal_tab" name="year_tab" style="right:140px;"></div>
+				</div>
+				<div class="dhx_cal_header"></div>
+				<div class="dhx_cal_data"></div>
+			</div>
 		</div>
-		
-	<!-- end. info block -->
-	
-	<div id="scheduler_here" class="dhx_cal_container" style='width:100%;height:100%;'>
-		<div class="dhx_cal_navline">
-			<div class="dhx_cal_prev_button">&nbsp;</div>
-			<div class="dhx_cal_next_button">&nbsp;</div>
-			<div class="dhx_cal_today_button"></div>
-			<div class="dhx_cal_date"></div>
-			<div class="dhx_cal_tab" name="day_tab" style="right:332px;"></div>
-			<div class="dhx_cal_tab" name="week_tab" style="right:268px;"></div>
-			<div class="dhx_cal_tab" name="month_tab" style="right:204px;"></div>
-			<div class="dhx_cal_tab" name="year_tab" style="right:140px;"></div>
+		<div data-role="footer" data-position="fixed">
+			<center>
+				Sri Lanka
+			</center>
 		</div>
-		<div class="dhx_cal_header">
-		</div>
-		<div class="dhx_cal_data">
-		</div>		
 	</div>
 </body>

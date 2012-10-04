@@ -15,36 +15,208 @@
 		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
 
+		<!--charts -->
+		<link class="include" rel="stylesheet" type="text/css" href="./libs/jplot/dist/jquery.jqplot.min.css" />
+		<link rel="stylesheet" type="text/css" href="./libs/jplot/dist/examples/examples.min.css" />
+		<link type="text/css" rel="stylesheet" href="./libs/jplot/dist/examples/syntaxhighlighter/styles/shCoreDefault.min.css" />
+		<link type="text/css" rel="stylesheet" href="./libs/jplot/dist/examples/syntaxhighlighter/styles/shThemejqPlot.min.css" />
+
+		<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../excanvas.js"></script><![endif]-->
+		<script class="include" type="text/javascript" src="./libs/jplot/dist/jquery.min.js"></script>
+
+		<!-- End example scripts -->
+
+		<!-- Don't touch this! -->
+
+		<script class="include" type="text/javascript" src="./libs/jplot/dist/jquery.jqplot.min.js"></script>
+		<script type="text/javascript" src="./libs/jplot/dist/examples/syntaxhighlighter/scripts/shCore.min.js"></script>
+		<script type="text/javascript" src="./libs/jplot/dist/examples/syntaxhighlighter/scripts/shBrushJScript.min.js"></script>
+		<script type="text/javascript" src="./libs/jplot/dist/examples/syntaxhighlighter/scripts/shBrushXml.min.js"></script>
+		<!-- End Don't touch this! -->
+
+		<!-- End additional plugins -->
+		<script class="include" type="text/javascript" src="./libs/jplot/dist/plugins/jqplot.pieRenderer.min.js"></script>
+		<!-- End additional plugins -->
+
+		<!-- Pregnant attendence -->
+		<script class="code" type="text/javascript">
+			$(document).ready(function() {
+				$.jqplot.config.enablePlugins = true;
+				var s1 = [2, 6, 7, 10];
+				var ticks = ['a', 'b', 'c', 'd'];
+
+				plot1 = $.jqplot('pregnantAttendence', [s1], {
+					// Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+					animate : !$.jqplot.use_excanvas,
+					seriesDefaults : {
+						renderer : $.jqplot.BarRenderer,
+						pointLabels : {
+							show : true
+						}
+					},
+					title : 'Monthly pregnant mother attendence',
+					axes : {
+						xaxis : {
+							renderer : $.jqplot.CategoryAxisRenderer,
+							ticks : ticks,
+							label : 'Month'
+						}
+					},
+					highlighter : {
+						show : false
+					}
+				});
+
+				$('#pregnantAttendence').bind('jqplotDataClick', function(ev, seriesIndex, pointIndex, data) {
+					$('#info1').html('series: ' + seriesIndex + ', point: ' + pointIndex + ', data: ' + data);
+				});
+			});
+		</script>
+
+		<!--pregnant vaccination -->
+		<script class="code" type="text/javascript">
+			$(document).ready(function() {
+				var s1 = [2, 6, 7, 10];
+				var s2 = [7, 5, 3, 4];
+				var s3 = [14, 9, 3, 8];
+				plot3 = $.jqplot('PrenantVaccing', [s1, s2, s3], {
+					// Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+					animate : !$.jqplot.use_excanvas,
+					seriesDefaults : {
+						renderer : $.jqplot.BarRenderer,
+						pointLabels : {
+							show : true
+						}
+					},
+					// Tell the plot to stack the bars.
+					stackSeries : true,
+					title : 'Monthly pregnant mother vaccination',
+					captureRightClick : true,
+					seriesDefaults : {
+						renderer : $.jqplot.BarRenderer,
+						rendererOptions : {
+							// Put a 30 pixel margin between bars.
+							barMargin : 30,
+							// Highlight bars when mouse button pressed.
+							// Disables default highlighting on mouse over.
+							highlightMouseDown : true
+						},
+						pointLabels : {
+							show : true
+						},
+
+					},
+					axes : {
+						xaxis : {
+							renderer : $.jqplot.CategoryAxisRenderer,
+							label : 'Month'
+						},
+						yaxis : {
+							// Don't pad out the bottom of the data range.  By default,
+							// axes scaled as if data extended 10% above and below the
+							// actual range to prevent data points right on grid boundaries.
+							// Don't want to do that here.
+							label : 'No of pregnant mothers',
+							padMin : 0
+						}
+					},
+					legend : {
+						show : true,
+						location : 'e',
+						placement : 'outside'
+					}
+				});
+				// Bind a listener to the "jqplotDataClick" event.  Here, simply change
+				// the text of the info3 element to show what series and ponit were
+				// clicked along with the data for that point.
+				$('#PrenantVaccing').bind('jqplotDataClick', function(ev, seriesIndex, pointIndex, data) {
+					$('#info3').html('series: ' + seriesIndex + ', point: ' + pointIndex + ', data: ' + data);
+				});
+			});
+		</script>
+
+		<!--pregnant weight -->
+		<script class="code" type="text/javascript">
+			$(document).ready(function() {
+				var s1 = [['Normal', 90], ['Over Weight', 2], ['Under Weight', 8]];
+
+				var plot8 = $.jqplot('pregnantWieght', [s1], {
+					grid : {
+						drawBorder : false,
+						drawGridlines : false,
+						background : '#ffffff',
+						shadow : false
+					},
+					axesDefaults : {
+
+					},
+					seriesDefaults : {
+						renderer : $.jqplot.PieRenderer,
+						rendererOptions : {
+							showDataLabels : true
+						}
+					},
+					legend : {
+						show : true,
+						rendererOptions : {
+							numberRows : 1
+						},
+						location : 's'
+					}
+				});
+			});
+		</script>
+		<style type="text/css">
+			.note {
+				font-size: 0.8em;
+			}
+			.jqplot-yaxis-tick {
+				white-space: nowrap;
+			}
+		</style>
 	</head>
 
 	<body>
-		<div data-role="page">
 
+		<div data-role="page" id="Pegweight">
 			<div data-role="header" data-position="fixed">
 				<a href="" data-rel="back" data-theme="c">ආපසු</a>
 				<h1>m-Midwife</h1>
 				<a href="index.html" data-theme="c" data-icon="home">Home</a>
-			</div><!-- /header -->
 
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="pregnant-stat.html" data-ajax="false"  data-theme="a" data-prefetch="true" data-transition="slidefade">Pregnant</a>
+						</li>
+						<li>
+							<a href="new-baby-stat.html" data-ajax="false"  data-theme="a" data-prefetch="true" data-transition="slidefade">New Born</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 			<div data-role="content">
-				
-				<ul data-role="listview" data-inset="true" >
-					<li data-theme="a">
-						<a href="#">AAAAAA</a>
-					</li>
-					<li data-theme="a">
-						<a href="#" data-transition="slide" data-ajax="false">BBBBBB</a>
-					</li>
-					<li data-theme="a">
-						<a href="#" data-transition="slide">CCCCCC</a>
-					</li>
-					<li data-theme="a">
-						<a href="#" data-transition="slide" data-ajax="false">DDDDDD</a>
-					</li>
-				</ul>
-				
-			</div><!-- /content -->
-			<div data-role="footer" data-id="navfooter" data-position="fixed">
+				<div id="pregnantWieght" style="width:300px; height:300px;"></div>
+			</div>
+			<div >
+				<div data-role="footer" data-id="navfooter" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<a href="#Pegvaccine" data-ajax="false" data-role="button" data-icon="arrow-l">Left</a>
+							<a href="#Pegattendence" data-ajax="false" data-role="button" data-icon="arrow-r">Right</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div data-role="page" id="Pegattendence">
+			<div data-role="header" data-position="fixed">
+				<a href="" data-rel="back" data-theme="c">ආපසු</a>
+				<h1>m-Midwife</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
 				<div data-role="navbar">
 					<ul>
 						<li>
@@ -54,9 +226,58 @@
 							<a href="new-baby-stat.html" data-ajax="false"  data-theme="c" data-prefetch="true" data-transition="slidefade">New Born</a>
 						</li>
 					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /footer -->
-		</div><!-- /page -->
+				</div>
+			</div>
+			<div data-role="content">
+				<div id="pregnantAttendence" style="width:400px; height:300px;"></div>
+			</div>
+			<div >
+				<div data-role="footer" data-id="navfooter" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<a href="#Pegweight" data-ajax="false" data-role="button" data-icon="arrow-l">Left</a>
+							<a href="#vaccine" data-ajax="false" data-role="button" data-icon="arrow-r">Right</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<div data-role="page" id = "#Pegvaccine">
+			
+			<div data-role="header" data-position="fixed">
+				<a href="" data-rel="back" data-theme="c">ආපසු</a>
+				<h1>m-Midwife</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="pregnant-stat.html" data-ajax="false"  data-theme="c" data-prefetch="true" data-transition="slidefade">Pregnant</a>
+						</li>
+						<li>
+							<a href="new-baby-stat.html" data-ajax="false"  data-theme="c" data-prefetch="true" data-transition="slidefade">New Born</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content">
+				<div id="PrenantVaccing" style="width:400px; height:300px;"></div>
+			</div>
+			<div data-role="footer" data-id="navfooter" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<a href="#Pegattendence" data-role="button" data-icon="arrow-l">Left</a>
+						<a href="#pegweight" data-role="button" data-icon="arrow-r">Right</a>
+					</ul>
+				</div>
+			</div>
+
+		</div>
 	</body>
 </html>
 
