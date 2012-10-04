@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	
+ 	<script src="./libs/codebase/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./libs/codebase/ext/dhtmlxscheduler_map_view.js" type="text/javascript" charset="utf-8"></script>
+	
+	<link rel="stylesheet" href="./libs/codebase/dhtmlxscheduler.css" type="text/css" title="no title" charset="utf-8">
+	
+	<style type="text/css" media="screen">
+		html, body{
+			margin:0px;
+			padding:0px;
+			height:100%;
+			overflow:hidden;
+		}	
+	</style>
+
+<script type="text/javascript" charset="utf-8">
+		function init() {
+			window.resizeTo(950,700)
+			modSchedHeight();
+		
+			scheduler.config.xml_date="%Y-%m-%d %H:%i";
+			scheduler.config.prevent_cache = true;
+			
+			scheduler.locale.labels.map_tab = "Map";
+			scheduler.locale.labels.section_location = "Location";
+			scheduler.config.multi_day = true;
+			scheduler.xy.map_date_width = 180; // date column width
+			scheduler.xy.map_description_width = 400; // description column width
+
+            // updating dates to display on before view change
+            scheduler.attachEvent("onBeforeViewChange", function(old_mode, old_date, new_mode, new_date) {
+                scheduler.config.map_start = scheduler.date.month_start(new Date((new_date||old_date).valueOf()));
+                scheduler.config.map_end = scheduler.date.add(scheduler.config.map_start, 1, "month");
+                return true;
+            });
+
+            // defining add function for prev/next arrows
+            scheduler.date.add_map = function(date, inc) {
+                return scheduler.date.add(date, inc, "month");
+            };
+
+            // defining date header 
+            var format = scheduler.date.date_to_str("%Y-%m-%d");
+            scheduler.templates.map_date = function(start, end, mode){
+                return format(start)+" — "+format(end);
+            };
+
+            // lightbox sections
+			scheduler.config.lightbox.sections=[	
+				{ name:"description", height:50, map_to:"text", type:"textarea", focus:true },
+				{ name:"location", height:43, map_to:"event_location", type:"textarea"  },
+				{ name:"time", height:72, type:"time", map_to:"auto"}	
+			];
+			
+			scheduler.config.map_inital_zoom = 8;
+
+			scheduler.init('scheduler_here',new Date(2012,8,11),"map");
+			scheduler.load("./xml/map.xml?v=35");
+		}	
+	</script>
+	
+</head>
+
+<body onload="init();" onresize="modSchedHeight()">
+	
+	
+	
+	
+	
+	<!-- info block 
+		href-prev
+		href-next
+		title
+		desc-short
+		desc-long
+-->
+	<script>
+		function modSchedHeight(){
+			var headHeight = 100;
+			var sch = document.getElementById("scheduler_here");
+			sch.style.height = (parseInt(document.body.offsetHeight)-headHeight)+"px";
+			var contbox = document.getElementById("contbox");
+			contbox.style.width = (parseInt(document.body.offsetWidth)-300)+"px";
+		}
+	</script>
+	<div style="height:95px;background-color:#3D3D3D;border-bottom:5px solid #828282;">
+		<a style="float:left;margin:22px 0 0 25px;" href="sample_timeline.shtml"><img src="images/btn-left.gif"></a>
+		<div id="contbox" style="float:left;color:white;margin:22px 75px 0 75px; overflow:hidden;font: 17px Arial,Helvetica;color:white">
+			<div style="border-right:5px solid #2D8EB6;color:#2D8EB6;width:175px;height:50px;float:left;text-align:right;padding-right:25px;">Map View</div>
+			
+		</div>
+		<a style="float:right;margin:22px 25px 0 0;" href="sample_mobile.html"><img src="images/btn-right.gif"></a>
+	</div>
+	<!-- end. info block -->
+	<div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
+		<div class="dhx_cal_navline">
+			<div class="dhx_cal_prev_button">&nbsp;</div>
+			<div class="dhx_cal_next_button">&nbsp;</div>
+			<div class="dhx_cal_today_button"></div>
+			<div class="dhx_cal_date"></div>
+			<div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
+			<div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+			<div class="dhx_cal_tab" name="map_tab" style="right:280px;"></div>
+			<div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+		</div>
+		<div class="dhx_cal_header">
+		</div>
+		<div class="dhx_cal_data">
+		</div>		
+	</div>
+</body>
