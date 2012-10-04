@@ -183,7 +183,7 @@
 
 			function createAttrs(raw) {
 				
-				console.log(raw);
+				//console.log(raw);
 				var attrs = [];
 				var parts = raw.split(' ');
 
@@ -197,7 +197,7 @@
 					attrs.push(attr);
 				}
 
-				console.log(attrs);
+				//console.log(attrs);
 				return attrs;
 			}
 		}
