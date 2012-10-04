@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<title>Vertical and Horizontal Bar Charts</title>
+
+		<link class="include" rel="stylesheet" type="text/css" href="../jquery.jqplot.min.css" />
+		<link rel="stylesheet" type="text/css" href="examples.min.css" />
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.min.css" />
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemejqPlot.min.css" />
+
+		<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../excanvas.js"></script><![endif]-->
+		<script class="include" type="text/javascript" src="../jquery.min.js"></script>
+
+		<!-- End example scripts -->
+
+		<!-- Don't touch this! -->
+
+		<script class="include" type="text/javascript" src="../jquery.jqplot.min.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.min.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.min.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.min.js"></script>
+		<!-- End Don't touch this! -->
+
+		<!-- Additional plugins go here -->
+
+		<script class="include" language="javascript" type="text/javascript" src="../plugins/jqplot.barRenderer.min.js"></script>
+		<script class="include" language="javascript" type="text/javascript" src="../plugins/jqplot.categoryAxisRenderer.min.js"></script>
+		<script class="include" language="javascript" type="text/javascript" src="../plugins/jqplot.pointLabels.min.js"></script>
+		<!-- End additional plugins -->
+
+		<script class="code" type="text/javascript">
+			$(document).ready(function() {
+				var s1 = [2, 6, 7, 15];
+				var s2 = [7, 5, 4, 3];
+				var s3 = [2, 19, 2, 1];
+				plot3 = $.jqplot('chart3', [s1, s2, s3], {
+					// Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+					animate : !$.jqplot.use_excanvas,
+					seriesDefaults : {
+						renderer : $.jqplot.BarRenderer,
+						pointLabels : {
+							show : true
+						}
+					},
+					// Tell the plot to stack the bars.
+					stackSeries : true,
+					title : 'Monthly baby vaccination',
+					captureRightClick : true,
+					seriesDefaults : {
+						renderer : $.jqplot.BarRenderer,
+						rendererOptions : {
+							// Put a 30 pixel margin between bars.
+							barMargin : 30,
+							// Highlight bars when mouse button pressed.
+							// Disables default highlighting on mouse over.
+							highlightMouseDown : true
+						},
+						pointLabels : {
+							show : true
+						}
+					},
+					axes : {
+						xaxis : {
+							renderer : $.jqplot.CategoryAxisRenderer,
+							label : 'Month'
+						},
+
+					},
+					legend : {
+						show : true,
+						location : 'e',
+						placement : 'outside'
+					}
+				});
+				// Bind a listener to the "jqplotDataClick" event.  Here, simply change
+				// the text of the info3 element to show what series and ponit were
+				// clicked along with the data for that point.
+				$('#chart3').bind('jqplotDataClick', function(ev, seriesIndex, pointIndex, data) {
+					$('#info3').html('series: ' + seriesIndex + ', point: ' + pointIndex + ', data: ' + data);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="example-content">
+
+			<!-- Example scripts go here -->
+
+			<style type="text/css">
+				.note {
+					font-size: 0.8em;
+				}
+				.jqplot-yaxis-tick {
+					white-space: nowrap;
+				}
+			</style>
+
+			<div id="chart3" style="width:400px; height:300px;"></div>
+
+		</div>
+
+	</body>
+
+</html>

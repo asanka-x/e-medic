@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<title>Vertical and Horizontal Bar Charts</title>
+
+		<link class="include" rel="stylesheet" type="text/css" href="../jquery.jqplot.min.css" />
+		<link rel="stylesheet" type="text/css" href="examples.min.css" />
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.min.css" />
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemejqPlot.min.css" />
+
+		<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../excanvas.js"></script><![endif]-->
+		<script class="include" type="text/javascript" src="../jquery.min.js"></script>
+
+		<!-- End example scripts -->
+
+		<!-- Don't touch this! -->
+
+		<script class="include" type="text/javascript" src="../jquery.jqplot.min.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.min.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.min.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.min.js"></script>
+		<!-- End Don't touch this! -->
+
+		<!-- Additional plugins go here -->
+
+		<script class="include" language="javascript" type="text/javascript" src="../plugins/jqplot.barRenderer.min.js"></script>
+		<script class="include" language="javascript" type="text/javascript" src="../plugins/jqplot.categoryAxisRenderer.min.js"></script>
+		<script class="include" language="javascript" type="text/javascript" src="../plugins/jqplot.pointLabels.min.js"></script>
+		<!-- End additional plugins -->
+
+		<script class="code" type="text/javascript">
+			$(document).ready(function() {
+				$.jqplot.config.enablePlugins = true;
+				var s1 = [2, 6, 7, 10];
+				var ticks = ['a', 'b', 'c', 'd'];
+
+				plot1 = $.jqplot('chart3', [s1], {
+					// Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+					animate : !$.jqplot.use_excanvas,
+					seriesDefaults : {
+						renderer : $.jqplot.BarRenderer,
+						pointLabels : {
+							show : true
+						}
+					},
+					title : 'Monthly pregnant mother attendence',
+					axes : {
+						xaxis : {
+							renderer : $.jqplot.CategoryAxisRenderer,
+							ticks : ticks,
+							label:'Month'
+						}
+					},
+					highlighter : {
+						show : false
+					}
+				});
+
+				$('#chart1').bind('jqplotDataClick', function(ev, seriesIndex, pointIndex, data) {
+					$('#info1').html('series: ' + seriesIndex + ', point: ' + pointIndex + ', data: ' + data);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="example-content">
+
+			<!-- Example scripts go here -->
+
+			<style type="text/css">
+				.note {
+					font-size: 0.8em;
+				}
+				.jqplot-yaxis-tick {
+					white-space: nowrap;
+				}
+			</style>
+
+			<div id="chart3" style="width:400px; height:300px;"></div>
+
+		</div>
+
+	</body>
+
+</html>
