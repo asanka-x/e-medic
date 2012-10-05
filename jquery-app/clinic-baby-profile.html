@@ -68,8 +68,16 @@
 				</div>
 				<strong for="name">Averall Status</strong>
 				<div id="averallStatus" name="averallStatus">
-					<textarea id="status" readonly="true" name="name">Sameera Perera</textarea>																																								
+					<textarea id="status" readonly="true" name="name">Sameera Perera</textarea>																																																																																
 					
+
+
+
+
+
+
+
+
 
 
 
@@ -89,28 +97,81 @@
 			<div data-role="footer" data-id="foo1" data-position="fixed">
 				<script type="type="text/css"">
 					.
-					ui - header.ui - btn - inner,    .ui - footer.ui - btn - inner,    .ui - mini.ui - btn - inner {
+					ui - header.ui - btn - inner,            .ui - footer.ui - btn - inner,            .ui - mini.ui - btn - inner {
 						font-size: 5px;
 					}
 				</script>
 				<div data-role="navbar" id="footerbuttons">
 					<ul>
 						<li>
-							<a href="#" data-theme="c">Growth Chart</a>
+							<script type="text/javascript">
+								$(document).delegate('#dlgWeight', 'click', function() {
+									// NOTE: The selector is the hidden DIV element.
+									$('#dlgWeightinlinecontent').simpledialog2();
+								})
+							</script>
+							<a href="#" id="dlgWeight" data-theme="c" data-role="button">Add Weight</a>
+
+							<!--NOTE: blankContent is set to TRUE, and the content goes IN the div. -->
+							<div id="dlgWeightinlinecontent" style="display:none" data-theme="a"
+							data-options='{"mode":"blank","headerText":"Weight","headerClose":true,"blankContent":true}'>
+								<div data-role="fieldcontain">
+									<label for="name">Weigt:</label>
+									<input type="text" name="wieght" id="wieght" value=""  />
+								</div>
+								<a rel='close' data-theme="a" data-role='button' href='#'>OK</a>
+								<a rel='close' data-theme="a" data-role='button' href='#'>Cancle</a>
+							</div>
 						</li>
 						<li>
-							<a href="#" data-theme="c">Vaccine Data</a>
+							<script type="text/javascript">
+								$(document).delegate('#dlgVaccine', 'click', function() {
+									// NOTE: The selector is the hidden DIV element.
+									$('#dlgVaccineinlinecontent').simpledialog2();
+								})
+							</script>
+							<a href="#" id="dlgVaccine" data-theme="c" data-role="button">Vaccination</a>
+							<!--NOTE: blankContent is set to TRUE, and the content goes IN the div. -->
+							<div id="dlgVaccineinlinecontent" style="display:none" data-theme="a"
+							data-options='{"mode":"blank","headerText":"Vaccine","headerClose":true,"blankContent":true}'>
+								<a rel='close' data-theme="a" data-role='button' href='#'>Flu</a>
+								<a rel='close' data-theme="a" data-role='button' href='#'>Hmv</a>
+								<a rel='close' data-theme="a" data-role='button' href='#'>Mmr</a>
+							</div>
 						</li>
 						<li>
-							<a href="#" data-theme="c">Notification</a>
-						</li>
-						<li>
-							<a href="#" data-theme="c">Growth Data</a>
+							<a href="#" id="dlgHead" data-theme="c" data-role="button">head circumference</a>
+							<script type="text/javascript">
+								$(document).delegate('#dlgHead', 'click', function() {
+									// NOTE: The selector is the hidden DIV element.
+									$('#dlgHeadinlinecontent').simpledialog2();
+								})
+							</script>
+							<!--NOTE: blankContent is set to TRUE, and the content goes IN the div. -->
+							<div id="dlgHeadinlinecontent" style="display:none" data-theme="a"
+							data-options='{"mode":"blank","headerText":"head circumference","headerClose":true,"blankContent":true}'>
+								<div data-role="fieldcontain">
+									<label for="name">head circumference:</label>
+									<input type="text" name="wieght" id="wieght" value=""  />
+								</div>
+								<a rel='close' data-theme="a" data-role='button' href='#'>OK</a>
+								<a rel='close' data-theme="a" data-role='button' href='#'>Cancle</a>
+							</div>
 						</li>
 					</ul>
 				</div><!-- /navbar -->
 			</div><!-- /footer -->
 		</div><!-- /page -->
+
+		<div data-role="page" id = "#addhieght">
+			<div data-role="content">
+				<div id="inlinecontent" style="display:none" data-theme="a"
+				data-options='{"mode":"blank","headerText":"Contact","headerClose":true,"blankContent":true}'>
+					<a rel='close' data-theme="a" data-role='button' href='#'>Call</a>
+					<a rel='close' data-theme="a" data-role='button' href='#'>SMS</a>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 
