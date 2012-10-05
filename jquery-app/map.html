@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="quitbutton" content="visibility:visible;" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!--<link rel="stylesheet" href="./styles/jquery.mobile-1.1.1.css" />-->
+		<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<!--<link type="text/css" href="./styles/jqm-datebox.min.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/jquery.mobile.simple.css" rel="stylesheet" />
+		<link type="text/css" href="./styles/demos.css" rel="stylesheet" /> -->
+
+		<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript"
 		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC-ntKL4-x-zP6kTw9x7_wE0SpSaYEWXjY&sensor=false"></script>
 		<script type='text/javascript' src='http://akurulk.s3.amazonaws.com/akuru.min.js'></script>
@@ -12,13 +25,13 @@
 			var map = null;
 			var markers = [['Kamala Gunawardhane', 7.240194, 80.592527], ['Dilani Samarashinghe', 7.236214, 80.586948], ['Rasika Kumari', 7.237023, 80.590618], ['Amila Niroshini', 7.241365, 80.589137], ['Ruwani Bandara', 7.245814, 80.59021]]
 			/*var marker = new google.maps.Marker({
-				position : new google.maps.LatLng(7.236214, 80.586948),
-				icon : "footprint.png",
-				map : map
-			});
-			var infowindow = new google.maps.InfoWindow({
-				content : "කමලා ගුණවර්ධන"
-			});*/
+			 position : new google.maps.LatLng(7.236214, 80.586948),
+			 icon : "footprint.png",
+			 map : map
+			 });
+			 var infowindow = new google.maps.InfoWindow({
+			 content : "කමලා ගුණවර්ධන"
+			 });*/
 			function initialize() {
 				var mapProp = {
 					center : new google.maps.LatLng(7.240194, 80.592527),
@@ -41,7 +54,7 @@
 						}
 					})(marker, i));
 				}
-				
+
 				//marker.setMap(map);
 				//infowindow.open(map, marker);
 			};
@@ -50,6 +63,20 @@
 	</head>
 
 	<body>
+		<div data-role="header" data-position="fixed">
+			<a href="" data-rel="back" data-theme="c">Back</a>
+
+			<h1>m-Midwife</h1>
+
+			<a href="index.html" data-theme="c" data-icon="home">Home</a>
+		</div><!-- /header -->
+		<center>
 		<div id="googleMap" style="width:500px;height:380px;"></div>
+		</center>
+		<div data-role="footer" data-position="fixed">
+			<center>
+				University of Peradeniya
+			</center>
+		</div>
 	</body>
 </html>
