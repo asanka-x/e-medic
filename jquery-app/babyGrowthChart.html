@@ -4,11 +4,21 @@
 <head>
 	
 	<title>Baby Growth Chart</title>
+	
+	<link rel="stylesheet" href="./styles/e-midwife-custom-theme.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.structure-1.1.1.min.css" />
+		<link rel="stylesheet" href="./styles/jquery.mobile.simpledialog.min.css" />
+		
+		
 
     <link class="include" rel="stylesheet" type="text/css" href="./libs/jplot/dist/jquery.jqplot.min.css" />
     <link rel="stylesheet" type="text/css" href="./libs/jplot/dist/examples/examples.min.css" />
     <link type="text/css" rel="stylesheet" href="./libs/jplot/dist/examples/syntaxhighlighter/styles/shCoreDefault.min.css" />
     <link type="text/css" rel="stylesheet" href="./libs/jplot/dist/examples/syntaxhighlighter/styles/shThemejqPlot.min.css" />
+  
+  	<script src="./libs/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile-1.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./libs/jquery.mobile.simpledialog2.js" type="text/javascript" charset="utf-8"></script>
   
   <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../excanvas.js"></script><![endif]-->
     <script class="include" type="text/javascript" src="./libs/jplot/dist/jquery.min.js"></script>
@@ -16,11 +26,15 @@
    
 </head>
 <body>
-    
-    
+    <div data-role="page">
+ 		<div data-role="header" data-position="fixed">
+				<a href="" data-rel="back" data-theme="c">Back</a>
+				<h1>m-Midwife</h1>
+				<a href="index.html" data-theme="c" data-icon="home">Home</a>
+		</div><!-- /header -->   
  
 
-      
+      <div style="padding-bottom: 75px"></div>
 <!-- Example scripts go here -->
 
     <style type="text/css" media="screen">
@@ -32,9 +46,9 @@
     }
     </style>
 
-
-    <div id="chart1" style="margin-top:20px; margin-left:20px; width:600px; height:400px;"></div>
-
+<center>
+    <div id="chart1" style="margin-top:20px; margin-left:20px; width:80%; height:70%;"></div>
+</center>
    
 
     <script class="code" type="text/javascript" language="javascript">
@@ -119,7 +133,7 @@ axes:{
 
 	
 	
-
+</div>
 </body>
 
 
